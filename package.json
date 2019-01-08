@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build",
-    "test": "composer test",
     "cleanup:css": "rimraf assets/css && mkdir -p assets/css",
     "cleanup:js": "rimraf assets/js && mkdir -p assets/js",
     "cleanup:images": "rimraf assets/images && mkdir -p assets/images",
