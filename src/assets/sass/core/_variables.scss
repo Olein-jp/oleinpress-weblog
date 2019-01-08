@@ -1,0 +1,52 @@
+/**
+  setting
+ */
+$base-font-family: "Helvetica", "Arial", YuGothic, "Yu Gothic", "Hiragino Sans", "ヒラギノ角ゴシック", "メイリオ", Meiryo, sans-serif;
+
+/**
+  colors
+ */
+$white    : #fff    !default;
+$gray-100 : #f8f9fa !default;
+$gray-200 : #e9ecef !default;
+$gray-300 : #dee2e6 !default;
+$gray-400 : #ced4da !default;
+$gray-500 : #adb5bd !default;
+$gray-600 : #6c757d !default;
+$gray-700 : #495057 !default;
+$gray-800 : #343a40 !default;
+$gray-900 : #212529 !default;
+$black    : #000    !default;
+
+$blue   : #007bff !default;
+$indigo : #6610f2 !default;
+$purple : #6f42c1 !default;
+$pink   : #e83e8c !default;
+$red    : #dc3545 !default;
+$orange : #fd7e14 !default;
+$yellow : #ffc107 !default;
+$green  : #28a745 !default;
+$teal   : #20c997 !default;
+$cyan   : #17a2b8 !default;
+
+
+$accent-color_primary: #96CEB4;
+
+$base-font-color_text   : #444444;
+$base-font-color_link   : #6098CE;
+$base-font-color_visited: #9A73CE;
+
+$sns-color_facebook  : #3B5998;
+$sns-color_twitter   : #55acee;
+$sns-color_instagram : #D93177;
+$sns-color_line      : #00b900;
+$sns-color_youtube   : #cd201f;
+$sns-color_rss       : #ee802f;
+$sns-color_wordpress : #21759b;
+$sns-color_github    : #333333;
+$sns-color_hatena    : #008fde;
+
+/**
+  layouts
+ */
+$spacer: 15px !default;

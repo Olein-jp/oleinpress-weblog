@@ -1,0 +1,19 @@
+.p-copyright {
+  background: $accent-color_primary;
+  font-size: 12px;
+  color: $gray-100;
+  line-height: 1.5;
+  text-align: center;
+  padding: 15px 0;
+  @include mq-up(lg) {
+    padding: 30px 0;
+    font-size: 14px;
+  }
+  a {
+    color: $white;
+  }
+  &__inner {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

@@ -1,0 +1,25 @@
+.l-site-content {
+  @include mq-up(lg) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.l-content-area {
+  @include mq-up(lg) {
+    width: 614px;
+  }
+  @include mq-up(xl) {
+    width: 734px;
+  }
+}
+
+.l-site-main {
+  .c-container_archive & {
+    @include mq-up(md) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+}

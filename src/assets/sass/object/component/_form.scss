@@ -1,0 +1,29 @@
+.c-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  label {
+    font-size: 16px;
+    color: $gray-700;
+  }
+  &_submit {
+    text-align: center;
+  }
+}
+
+.c-form-control {
+  border: 1px solid $gray-300;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 5px;
+  color: $gray-700;
+  border-radius: 3px;
+  &_submit {
+    background: $accent-color_primary;
+    color: white;
+    display: inline-block;
+    padding: 7px 30px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}

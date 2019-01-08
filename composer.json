@@ -1,0 +1,6 @@
+{
+    "require": {
+        "inc2734/wp-breadcrumbs": "^1.0",
+        "inc2734/wp-mw-share-buttons": "^0.2.2"
+    }
+}

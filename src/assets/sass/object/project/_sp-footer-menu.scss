@@ -1,0 +1,173 @@
+.p-sp-footer-menu {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10003;
+  width: 100%;
+  background: #f4f4f4;
+  box-shadow: 0 -1px 3px rgba( #ccc, .75);
+  @include mq-up(lg) {
+    display: none;
+  }
+  &__list {
+    margin: 0;
+    padding: 0 10px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    li {
+      text-align: center;
+      a {
+        display: inline-block;
+        padding: 12px;
+        color: $gray-500;
+        text-decoration: none;
+        font-size: 12px;
+        line-height: 1;
+        transition: all .75s ease;
+      }
+      i {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 4px;
+      }
+    }
+    .current-menu-item a,
+    .is-active {
+      color: $accent-color_primary;
+    }
+  }
+}
+
+.p-sp-footer-share {
+  position: fixed;
+  left: 0;
+  bottom: -300px;
+  z-index: 10000;
+  width: 100%;
+  background: $gray-100;
+  box-shadow: 0 -1px 3px rgba( #ccc, .75);
+  transition: all 1s ease;
+  @include mq-up(lg) {
+    display: none;
+  }
+  &.is-active {
+    bottom: 60px;
+  }
+  &__list {
+    margin: 0;
+    padding: 15px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    text-align: center;
+    a {
+      display: block;
+      text-decoration: none;
+      line-height: 1;
+      font-size: 12px;
+      @include plain-hover-focus {
+        color: $gray-500;
+      }
+      .text {
+        color: $white;
+      }
+    }
+    &_twitter a {
+      color: $sns-color_twitter;
+    }
+    &_facebook a {
+      color: $sns-color_facebook;
+    }
+    &_line a {
+      color: $sns-color_line;
+    }
+    &_hatena a {
+      color: $sns-color_hatena;
+    }
+    &_copy a {
+      color: $gray-600;
+    }
+    &_hatena {
+      .fa-hatena {
+        position: relative;
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          margin-left: 18px;
+          content: "B!";
+          font-family: "Arial", sans-serif;
+          font-style: normal;
+          font-weight: bold;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.p-sp-footer-follow {
+  position: fixed;
+  left: 0;
+  bottom: -300px;
+  z-index: 10001;
+  width: 100%;
+  background: $gray-100;
+  box-shadow: 0 -1px 3px rgba($gray-400, .75);
+  transition: all 1s ease;
+  @include mq-up(lg) {
+    display: none;
+  }
+  &.is-active {
+    bottom: 60px;
+  }
+  &__list {
+    margin: 0;
+    //padding: 15px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  &__item {
+    width: 25.0%;
+    text-align: center;
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 60px;
+      font-size: 30px;
+      line-height: 60px;
+      @include plain-hover-focus {
+        color: $white;
+      }
+    }
+    &_twitter {
+      background-color: $sns-color_twitter;
+    }
+    &_facebook {
+      background-color: $sns-color_facebook;
+    }
+    &_instagram {
+      background: linear-gradient(-135deg,#1400c8,#b900b4,#f50000);
+    }
+    &_line {
+      background-color: $sns-color_line;
+    }
+    &_youtube {
+      background: linear-gradient(to bottom, #e52d27 0%,#b31217 100%);
+    }
+    &_wordpress {
+      background-color: $sns-color_wordpress;
+    }
+    &_github {
+      background-color: $sns-color_github;
+    }
+    &_rss {
+      background-color: $sns-color_rss;
+    }
+  }
+}

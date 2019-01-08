@@ -1,0 +1,19 @@
+{
+  "name": "inc2734/wp-mw-share-buttons",
+  "description": "Adds social share buttons.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0+",
+  "version": "0.2.2",
+  "authors": [
+    {
+      "name": "Takashi Kitajima",
+      "email": "inc@2inc.org",
+      "homepage": "https://2inc.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "MwShareButtons\\": ""
+    }
+  }
+}

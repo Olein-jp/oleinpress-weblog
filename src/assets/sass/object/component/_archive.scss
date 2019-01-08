@@ -1,0 +1,31 @@
+.c-archive {
+  &-header {
+    order: 1;
+    padding: 15px;
+  }
+  &-title {
+    font-size: 16px;
+    a {
+      color: $base-font-color_text;
+      text-decoration: none;
+      @include hover-focus-active {
+        color: darken( $base-font-color_text, 10% );
+      }
+    }
+  }
+  &-thumbnail {
+    order: 0;
+    background-color: $accent-color_primary;
+    @include centered-image(200px);
+    a {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    @include mq-up(lg) {
+      .sticky > & {
+        height: 300px;
+      }
+    }
+  }
+}

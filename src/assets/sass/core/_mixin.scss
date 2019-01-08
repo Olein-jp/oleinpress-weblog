@@ -1,0 +1,63 @@
+@mixin hover {
+  &:hover { @content; }
+}
+
+@mixin hover-focus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin plain-hover-focus {
+  &,
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin hover-focus-active {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+@mixin anchor-link-color(
+  $base    : $base-font-color_link,
+  $hover   : $base-font-color_link,
+  $visited : $base-font-color_visited,
+  $focus   : $base-font-color_link,
+  $active  : $base-font-color_link
+) {
+  color: $base,
+  &:hover {
+    color: $hover;
+  }
+  &:visited {
+    color: $visited;
+  }
+  &:focus {
+    color: $focus;
+  }
+  &:active {
+    color: $active;
+  }
+
+}
+
+@mixin centered-image( $height: 400px ) {
+  position: relative;
+  overflow: hidden;
+  height: $height;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,100 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "cc30f6ae9b96e0550b93d8f3483c6380",
+    "packages": [
+        {
+            "name": "inc2734/wp-breadcrumbs",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inc2734/wp-breadcrumbs.git",
+                "reference": "8e9c67f6ce3c950c8545830db5f5b41820b6baeb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inc2734/wp-breadcrumbs/zipball/8e9c67f6ce3c950c8545830db5f5b41820b6baeb",
+                "reference": "8e9c67f6ce3c950c8545830db5f5b41820b6baeb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "doctrine/instantiator": "1.0.4",
+                "myclabs/deep-copy": "1.7.0",
+                "pdepend/pdepend": "2.5.0",
+                "phpdocumentor/reflection-docblock": "3.2.2",
+                "phpmd/phpmd": "2.*",
+                "phpunit/php-token-stream": "1.4.11",
+                "phpunit/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "*",
+                "symfony/yaml": "3.4.1",
+                "wp-coding-standards/wpcs": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Inc2734\\WP_Breadcrumbs\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Takashi Kitajima",
+                    "email": "inc@2inc.org"
+                }
+            ],
+            "description": "A library for WordPress breadcrumbs.",
+            "time": "2018-07-27T12:57:18+00:00"
+        },
+        {
+            "name": "inc2734/wp-mw-share-buttons",
+            "version": "0.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inc2734/wp-mw-share-buttons.git",
+                "reference": "4bed6e0d6c1a17a53d7a9be15356dbd8c8369276"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inc2734/wp-mw-share-buttons/zipball/4bed6e0d6c1a17a53d7a9be15356dbd8c8369276",
+                "reference": "4bed6e0d6c1a17a53d7a9be15356dbd8c8369276",
+                "shasum": ""
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "MwShareButtons\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Takashi Kitajima",
+                    "email": "inc@2inc.org",
+                    "homepage": "https://2inc.org"
+                }
+            ],
+            "description": "Adds social share buttons.",
+            "time": "2017-10-10T01:53:21+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

@@ -1,0 +1,51 @@
+.c-comment {
+  &-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid $gray-200;
+    &__header {
+      display: flex;
+      margin-bottom: 15px;
+    }
+    &__gravatar {
+      img {
+        border-radius: 50%;
+      }
+    }
+    &__meta {
+      padding-left: 15px;
+    }
+    &__author {
+      &-link {
+        color: $gray-500;
+      }
+    }
+    &__content {
+      @include classic-editor-style( $gray-500 );
+    }
+
+    & > .children {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      & > .c-comment-item {
+        border: none;
+        border-left: 5px solid $gray-200;
+      }
+    }
+    &__reply {
+      background: $accent-color_primary;
+      display: inline-block;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+      line-height: 1;
+      padding: 5px 10px;
+      border-radius: 3px;
+      &-area {
+        text-align: right;
+      }
+    }
+  }
+}

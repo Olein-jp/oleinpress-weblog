@@ -1,0 +1,165 @@
+.widget {
+  margin-bottom: 50px;
+  // form & select
+  input,
+  button,
+  textarea,
+  select {
+    border: 1px solid $gray-500;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 16px;
+    color: $gray-700;
+  }
+  textarea,
+  select {
+    width: 100%;
+  }
+  a {
+    color: $gray-700;
+    text-decoration: none;
+    transition: all 1s ease;
+    &:hover {
+      color: $gray-600;
+      text-decoration: underline;
+    }
+  }
+  &-title {
+    background: $accent-color_primary;
+    color: white;
+    line-height: 1;
+    padding: 15px;
+    margin-bottom: 15px;
+    a {
+      color: $white;
+    }
+  }
+}
+
+/**
+  widget/search-form
+ */
+.widget_search {
+  .c-widget-searchform {
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+    &__input {
+      font-size: 16px;
+      line-height: 1;
+      width: 100%;
+      padding: 10px;
+      background-color: $gray-100;
+    }
+    &__submit {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 1.4em;
+      line-height: 46px;
+      position: absolute;
+      color: $gray-500;
+      top: 0;
+      right: 8%;
+      padding: 0;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+  }
+}
+
+/**
+  widget/categories
+  widget/archive
+ */
+.widget_categories,
+.widget_archive,
+.widget_meta,
+.widget_recent_comments,
+.widget_recent_entries,
+.widget_rss,
+.widget_pages {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    li {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 1em;
+      ul {
+        margin-top: 1em;
+      }
+    }
+  }
+}
+/**
+  Need curet for child of lists
+ */
+.widget_categories,
+.widget_pages {
+  ul {
+    li {
+      .children {
+        li {
+          &::before {
+            content: "\f0da";
+            font-family: "Font Awesome 5 Free";
+            font-weight: bold;
+            color: $gray-300;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+  widget/categories
+  widget/archive
+  custom post counter
+ */
+.widget_categories,
+.widget_archive {
+  .c-post-counter {
+    display: inline-block;
+    background: $gray-300;
+    color: white;
+    font-size: 12px;
+    line-height: 20px;
+    width: 20px;
+    text-align: center;
+    border-radius: 50%;
+    margin-left: 5px;
+  }
+}
+
+/**
+  widget/tag cloud
+ */
+.widget_tag_cloud {
+  .tagcloud {
+    a {
+      display: inline-block;
+      background: $accent-color_primary;
+      padding: 5px 10px;
+      line-height: 1;
+      color: $white;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      &::before {
+        content: "\f02b";
+        font-family: "Font Awesome 5 Free";
+        font-weight: bold;
+        color: $gray-100;
+        margin-right: 5px;
+      }
+      &:hover {
+        text-decoration: none;
+        opacity: .5;
+      }
+    }
+  }
+}

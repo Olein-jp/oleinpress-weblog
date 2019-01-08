@@ -1,0 +1,47 @@
+.p-site-branding {
+  width: calc( 100% - 100px );
+  margin: 0 auto;
+}
+
+.p-site-title {
+  font-size: 22px;
+  text-align: center;
+  line-height: 60px;
+  font-weight: bold;
+  @include mq-up(lg) {
+    font-size: 26px;
+    line-height: 1;
+    padding: 30px 0;
+  }
+  @include mq-up(xl) {
+    font-size: 32px;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.p-hamburger-button {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 60px;
+  width: 60px;
+  transition: all 1s ease;
+  z-index: 10000;
+  background: rgba( black, .5 );
+  @include mq-up(lg) {
+    display: none;
+  }
+  &.is-visible {
+    display: block;
+  }
+  &.is-active {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba( black, .5 );
+    transition: all 1s ease;
+  }
+}

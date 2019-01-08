@@ -1,0 +1,21 @@
+.l-site {
+  padding-bottom: 60px;
+  @include mq-up(lg) {
+    padding-bottom: 0;
+  }
+}
+
+.l-site-header {
+  position: relative;
+  background: $accent-color_primary;
+  //box-shadow: 0 3px 6px rgba( $gray-800, .2 );
+  z-index: 99;
+  &__inner {
+    //display: flex;
+    //justify-content: space-between;
+  }
+}
+
+.l-header-menu {
+
+}
