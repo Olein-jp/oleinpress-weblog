@@ -1,0 +1,30 @@
+sudo: false
+language: php
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+branches:
+  only:
+  - master
+  - develop
+  - "/\\d+\\.\\d+\\.\\d+?.*/"
+php:
+- 5.6
+- 7.1
+before_deploy:
+  - npm run build
+  - npm run zip
+  - export RELEASE_FILE=$(ls oleinpress-weblog.zip)
+deploy:
+  provider: releases
+  api_key:
+    secure: dMg6T9RBeV5B/uHQQnE03GPLgzeJuu9p6iexksU6PpnZ3iJpejYWVDx4jvILsrDalMMqQ/FO0yWh9+KUZN3RiiZcI0rBgoqrJj2QCG1w04XQG9T6vbO8j+ieqtPOZtO24wXNdUrKqsDndWN+Iovs5bTZTeRvsQbQJM+fI3gZnBTA5TWPMmWZpaKQkr2lBiH17dSP+Y9KN24X1rB3yi2rBmK4PJ+Z2pmuMdk1tfSrcLBh7ptn3rIBxC8NJSEMW6uwOZ1bQxTmp8fYQrO/Lm2cjx3zMy7IOWU3TXOnbZGCl3SrKB09KkQ39jd0JBvzqBKFSE41gyGPb05GJUapEIidS7PUzVC4OyYZswtYWeR63KS+0nwO0td4QoQDmi+OqXvwoY0/IclSceDM+52+0UretnDGGXtuAjynDCGKkuzPxhk3YAz04eFVCuyDgTDs9DuRrhq1WpqaFtpRzRbRG9W2qsGKErUMdmHp+JGpaetQdCh/0A5lllFztUCKnO+It6PGkoTpA9BzP5XfaW13RoP8XDBBEDyjRCwZrg2ftLrear3AHlqEjiLn7cVYx9OZdm2mZWgGuV6HPIWKVZEUUSuiFXgWMxpJtSVD3zyUkOdxz72WomZBSflmYQRXMUHaJBXnSbLlqRHctYAX3Ef9GABcWIejp8SEE5QfLmcVIvfXw/g=
+  file: "${RELEASE_FILE}"
+  skip_cleanup: true
+  on:
+    tags: true
+    php:
+      - 5.6
+      - 7.1
+    repo: Olein-jp/oleinpress-weblog

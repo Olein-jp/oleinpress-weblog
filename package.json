@@ -4,10 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm run build",
+    "test": "composer test",
     "cleanup:css": "rimraf assets/css && mkdir -p assets/css",
     "cleanup:js": "rimraf assets/js && mkdir -p assets/js",
     "cleanup:images": "rimraf assets/images && mkdir -p assets/images",
     "cleanup:packages": "rimraf assets/packages && mkdir -p assets/packages",
+    "cleanup:zip": "rimraf oleinpress-weblog.zip",
     "css:style:sass": "node-sass --source-map true --include-path=node_modules/node-normalize-scss src/assets/sass/style.scss -o assets/css",
     "css:style:sutoprefixer": "postcss assets/css/style.css --use autoprefixer -o assets/css/style.css",
     "css:style:postcss": "postcss assets/css/style.css -o assets/css/style.min.css -c=postcss.config.js",
@@ -27,7 +30,11 @@
     "watch:css": "watch 'npm run css:style' ./src/assets/sass",
     "watch:image": "onchange 'src/assets/images' -e '**/*.DS_Store' -- npm run images",
     "watch:php": "browser-sync start -p 'oleinpressweblog.wordpress' -f '**/*' 'assets/**'",
-    "watch": "npm-run-all -p watch:*"
+    "watch": "npm-run-all -p watch:*",
+    "zip:pack": "composer install --no-dev && rsync -a --exclude='.*' --exclude='/node_modules' --exclude='*.config.js' --exclude='*.json' --exclude='*.lock' ./ oleinpress-weblog",
+    "zip:archive": "zip -9 -qmr oleinpress-weblog.zip oleinpress-weblog",
+    "zip": "npm run cleanup:zip && npm run zip:pack && npm run zip:archive",
+    "build": "npm run packages && npm-run-all -p js css images"
   },
   "repository": {
     "type": "git",
