@@ -31,7 +31,7 @@
     "watch:image": "onchange 'src/assets/images' -e '**/*.DS_Store' -- npm run images",
     "watch:php": "browser-sync start -p 'oleinpressweblog.wordpress' -f '**/*' 'assets/**'",
     "watch": "npm-run-all -p watch:*",
-    "zip:pack": "composer install --no-dev && rsync -a --exclude='.*' --exclude='/node_modules' --exclude='*.config.js' --exclude='*.json' --exclude='*.lock' . oleinpress-weblog",
+    "zip:pack": "composer install --no-dev && rsync -a --exclude='.*' --exclude='/node_modules' --exclude='*.config.js' --exclude='*.json' --exclude='*.lock' --exclude='/bin' . oleinpress-weblog",
     "zip:archive": "zip -9 -qmr oleinpress-weblog.zip oleinpress-weblog",
     "zip": "npm run cleanup:zip && npm run zip:pack && npm run zip:archive",
     "build": "npm run packages && npm-run-all -p js css images"
