@@ -1,17 +1,12 @@
 sudo: false
 language: php
-notifications:
-  email:
-    on_success: never
-    on_failure: change
 branches:
   only:
   - master
   - develop
   - "/\\d+\\.\\d+\\.\\d+?.*/"
 php:
-- 5.6
-- 7.1
+  - 7.1
 before_deploy:
   - npm run build
   - npm run zip
@@ -25,6 +20,5 @@ deploy:
   on:
     tags: true
     php:
-      - 5.6
       - 7.1
     repo: Olein-jp/oleinpress-weblog
