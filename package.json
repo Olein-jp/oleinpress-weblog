@@ -24,7 +24,7 @@
     "images": "npm run cleanup:images && cpy 'src/assets/images/**' assets/images",
     "packages:humburgers": "cpx 'node_modules/hamburgers/**' 'src/assets/packages/hamburgers'",
     "packages:superfish": "cpx 'node_modules/superfish/dist/**' 'src/assets/packages/superfish'",
-    "packages": "npm run cleanup:packages && npm-run-all packages:*",
+    "packages": "npm run cleanup:packages && npm-run-all -p packages:*",
     "watch:css": "watch 'npm run css:style' ./src/assets/sass",
     "watch:image": "onchange 'src/assets/images' -e '**/*.DS_Store' -- npm run images",
     "watch:php": "browser-sync start -p 'oleinpressweblog.wordpress' -f '**/*' 'assets/**'",
