@@ -11,6 +11,8 @@ branches:
   - "/\\d+\\.\\d+\\.\\d+?.*/"
 php:
   - 7.1
+before_script: composer require atoum/atoum
+script: vendor/bin/atoum
 before_deploy:
   - npm run build
   - npm run zip
