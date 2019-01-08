@@ -25,4 +25,6 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
+    php:
+      - 7.1
     repo: Olein-jp/oleinpress-weblog
