@@ -9,6 +9,8 @@ branches:
   - master
   - develop
   - "/\\d+\\.\\d+\\.\\d+?.*/"
+php:
+  - 7.1
 before_script: composer require atoum/atoum
 script: vendor/bin/atoum
 before_deploy:
@@ -23,6 +25,4 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-    php:
-      - 7.1
     repo: Olein-jp/oleinpress-weblog
