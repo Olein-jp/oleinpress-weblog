@@ -1,36 +1,28 @@
 sudo: false
 language: php
+notifications:
+  email:
+    on_success: never
+    on_failure: change
 branches:
   only:
   - master
   - develop
   - "/\\d+\\.\\d+\\.\\d+?.*/"
 php:
-  - 7.1
-env:
-  global:
-    - GIT_COMMITTER_NAME=travis-ci
-    - GIT_COMMITTER_EMAIL=koji.kuno@gmail.com
-    - GIT_AUTHOR_NAME=travis-ci
-    - GIT_AUTHOR_EMAIL=koji.kuno@gmail.com
-    - WP_VERSION=latest WP_MULTISITE=0
-install:
-  - nvm install 8
-  - npm install
-  - composer install
-before_script:
-  - bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
+- 5.6
+- 7.1
 before_deploy:
+  - npm run build
   - npm run zip
-  - ls -la oleinpress-media.zip
   - export RELEASE_FILE=$(ls oleinpress-weblog.zip)
 deploy:
   provider: releases
   api_key:
-    secure: dMg6T9RBeV5B/uHQQnE03GPLgzeJuu9p6iexksU6PpnZ3iJpejYWVDx4jvILsrDalMMqQ/FO0yWh9+KUZN3RiiZcI0rBgoqrJj2QCG1w04XQG9T6vbO8j+ieqtPOZtO24wXNdUrKqsDndWN+Iovs5bTZTeRvsQbQJM+fI3gZnBTA5TWPMmWZpaKQkr2lBiH17dSP+Y9KN24X1rB3yi2rBmK4PJ+Z2pmuMdk1tfSrcLBh7ptn3rIBxC8NJSEMW6uwOZ1bQxTmp8fYQrO/Lm2cjx3zMy7IOWU3TXOnbZGCl3SrKB09KkQ39jd0JBvzqBKFSE41gyGPb05GJUapEIidS7PUzVC4OyYZswtYWeR63KS+0nwO0td4QoQDmi+OqXvwoY0/IclSceDM+52+0UretnDGGXtuAjynDCGKkuzPxhk3YAz04eFVCuyDgTDs9DuRrhq1WpqaFtpRzRbRG9W2qsGKErUMdmHp+JGpaetQdCh/0A5lllFztUCKnO+It6PGkoTpA9BzP5XfaW13RoP8XDBBEDyjRCwZrg2ftLrear3AHlqEjiLn7cVYx9OZdm2mZWgGuV6HPIWKVZEUUSuiFXgWMxpJtSVD3zyUkOdxz72WomZBSflmYQRXMUHaJBXnSbLlqRHctYAX3Ef9GABcWIejp8SEE5QfLmcVIvfXw/g=
+    secure: B1tNMxasQNgevpENvmL0XwkEMgA1mOKgMgE59Co6hemUgzuOsdcmWruB1bGNIM/uvuU6o0CLy6Mabd7FLuXMUHRvL/YSX+QEGEXNJyhQDLNFUjZXE5EzuDEkaionzX9RPo6gN7S0L5oKLykthwqdwOSUWSXULBTTULy2UAxSw9ccwS1vSlYQTNqcbu07RB7wj6qz4n+SJzVA36RAfckOHkQBenpUBKewBmghANVnEXyp9s+A/js8SKwzFL9W6nZp2aKE46Xk/CYu0fktnPfF85yqPaZu7YogRxVU81k7H8UvaPGJzlYaoTbcRIJIT4Et80ZrQd1LHn7RqH1xdQO1iy2Mu80vfiddJKziLDIIQPVn3Olek5utRIjkPvtnewXt0ooKuDCTMYKUVNDkcwn7xesoi6TQpQ7N2HT6LeQqopLnHlCeieG94WmRZ6O4In25r8jNCNjFIDISEi0QIbLUPGesRgqW9ae9fZhqzovof1AVd/jaJ8/5taxRDQ5z4zqhFmxplBG0BbKBpenuoEnsnXyaujdrOeBt1os8VIEbQDbV+SrfconxAqz6Am3b3lSCw16SNC7lfa5TGoxpDulBbuNZldDoDIpGBfzgKNE9bdVWRoQrsVM417af7I1aX4xrVSC+PHR9O2YZnwFIN0Y9GfNK9yvotxc2f+MjdD+RXZc=
   file: "${RELEASE_FILE}"
+  skip_cleanup: true
   on:
     tags: true
-    php:
-      - 7.1
+    php: 7.1
     repo: Olein-jp/oleinpress-weblog
