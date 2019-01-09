@@ -11,6 +11,9 @@ branches:
   - "/\\d+\\.\\d+\\.\\d+?.*/"
 php:
   - 7.1
+install:
+  - nvm install 8
+  - npm install
 before_script: composer require atoum/atoum
 script: vendor/bin/atoum
 before_deploy:
