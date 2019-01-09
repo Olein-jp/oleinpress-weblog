@@ -175,6 +175,13 @@ require get_template_directory() . '/vendor/autoload.php';
 require get_template_directory() . '/template-parts/comment-setting.php';
 
 /**
+ * Load WP GitHub Theme Updater
+ *
+ * @link https://github.com/inc2734/wp-github-theme-updater
+ */
+require_once get_template_directory() . '/inc/update/updater.php';
+
+/**
  * @param $output
  * @param $args
  *

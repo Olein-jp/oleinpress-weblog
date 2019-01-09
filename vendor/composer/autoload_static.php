@@ -13,6 +13,7 @@ class ComposerStaticInitb985f65c34b6f84f601b864d332d90d1
         ),
         'I' => 
         array (
+            'Inc2734\\WP_GitHub_Theme_Updater\\' => 32,
             'Inc2734\\WP_Breadcrumbs\\' => 23,
         ),
     );
@@ -21,6 +22,10 @@ class ComposerStaticInitb985f65c34b6f84f601b864d332d90d1
         'MwShareButtons\\' => 
         array (
             0 => __DIR__ . '/..' . '/inc2734/wp-mw-share-buttons',
+        ),
+        'Inc2734\\WP_GitHub_Theme_Updater\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/inc2734/wp-github-theme-updater/src',
         ),
         'Inc2734\\WP_Breadcrumbs\\' => 
         array (
