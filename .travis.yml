@@ -14,8 +14,6 @@ php:
 install:
   - nvm install 8
   - npm install
-before_script: composer require atoum/atoum
-script: vendor/bin/atoum
 before_deploy:
   - npm run build
   - npm run zip
