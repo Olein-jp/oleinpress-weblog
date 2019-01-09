@@ -7,7 +7,7 @@
     "cleanup:css": "rimraf assets/css && mkdir -p assets/css",
     "cleanup:js": "rimraf assets/js && mkdir -p assets/js",
     "cleanup:images": "rimraf assets/images && mkdir -p assets/images",
-    "cleanup:packages": "rimraf assets/packages && mkdir -p assets/packages",
+    "cleanup:packages": "mkdir -p assets/packages",
     "cleanup:zip": "rimraf oleinpress-weblog.zip",
     "css:style:sass": "node-sass --source-map true --include-path=node_modules/node-normalize-scss src/assets/sass/style.scss -o assets/css",
     "css:style:sutoprefixer": "postcss assets/css/style.css --use autoprefixer -o assets/css/style.css",
