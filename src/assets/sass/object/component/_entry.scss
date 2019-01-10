@@ -56,10 +56,7 @@
       height: 350px;
     }
     @include mq-up(lg) {
-      height: 400px;
-    }
-    @include mq-up(xl) {
-      height: 430px;
+      height: 380px;
     }
     a {
       display: block;
