@@ -139,37 +139,6 @@ if ( has_nav_menu( 'sp-footer-menu') ) :
 			</li>
 		</ul>
 	</div>
-	<script>
-		jQuery(function($){
-			$("a[href='#sns-share']").on( 'click', function() {
-			   $("a[href='#sns-share'], .p-sp-footer-share").toggleClass( 'is-active' );
-			   $("a[href='#sns-follow'], .p-sp-footer-follow").removeClass( 'is-active' );
-			   $("a[href='#header-menu'], .p-header-menu, .p-hamburger-button").removeClass( 'is-active' );
-			});
-			$("a[href='#sns-follow']").on( 'click', function() {
-                $("a[href='#sns-follow'], .p-sp-footer-follow").toggleClass( 'is-active' );
-				$("a[href='#sns-share'], .p-sp-footer-share").removeClass( 'is-active' );
-                $("a[href='#header-menu'], .p-header-menu, .p-hamburger-button").removeClass( 'is-active' );
-			});
-            // $("a[href='#sns-menu'], .p-hamburger-button").on( 'click', function() {
-            //     $("a[href='#sns-menu'], .p-hamburger-button, .p-sp-sidebar").toggleClass( 'is-active' );
-            //     $("a[href='#sns-share'], .p-sp-footer-share").removeClass( 'is-active' );
-            //     $("a[href='#sns-follow'], .p-sp-footer-follow").removeClass( 'is-active' );
-            // });
-
-            // if ( $( "a[href='#sns-menu']" ).length ) {
-            //     $('.p-sp-sidebar').addClass( 'is-active-footer-menu' );
-            //     $('.p-hamburger-button').addClass( 'is-visible' );
-			// }
-
-			$("a[href='#header-menu'], .p-hamburger-button").on( 'click', function() {
-				$('.p-header-menu, .p-hamburger-button').toggleClass( 'is-active' );
-                $("a[href='#header-menu']").toggleClass( 'is-active' );
-                $("a[href='#sns-share'], .p-sp-footer-share").removeClass( 'is-active' );
-                $("a[href='#sns-follow'], .p-sp-footer-follow").removeClass( 'is-active' );
-			});
-		});
-	</script>
 <?php
 endif;
 ?>

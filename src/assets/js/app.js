@@ -1,21 +1,50 @@
+jQuery(function($){
+    $("a[href='#sns-share']").on( 'click', function() {
+        $("a[href='#sns-share'], .p-sp-footer-share").toggleClass( 'is-active' );
+        $("a[href='#sns-follow'], .p-sp-footer-follow").removeClass( 'is-active' );
+        $("a[href='#header-menu'], .p-header-menu, .p-hamburger-button").removeClass( 'is-active' );
+    });
+    $("a[href='#sns-follow']").on( 'click', function() {
+        $("a[href='#sns-follow'], .p-sp-footer-follow").toggleClass( 'is-active' );
+        $("a[href='#sns-share'], .p-sp-footer-share").removeClass( 'is-active' );
+        $("a[href='#header-menu'], .p-header-menu, .p-hamburger-button").removeClass( 'is-active' );
+    });
+    $("a[href='#header-menu'], .p-hamburger-button").on( 'click', function() {
+        $('.p-header-menu, .p-hamburger-button').toggleClass( 'is-active' );
+        $("a[href='#header-menu']").toggleClass( 'is-active' );
+        $("a[href='#sns-share'], .p-sp-footer-share").removeClass( 'is-active' );
+        $("a[href='#sns-follow'], .p-sp-footer-follow").removeClass( 'is-active' );
+    });
+});
+
 /**
- * forEach implementation for Objects/NodeLists/Arrays, automatic type loops and context options
+ * File skip-link-focus-fix.js.
  *
- * @private
- * @author Todd Motto
- * @link https://github.com/toddmotto/foreach
- * @param {Array|Object|NodeList} collection - Collection of items to iterate, could be an Array, Object or NodeList
- * @callback requestCallback      callback   - Callback function for each iteration.
- * @param {Array|Object|NodeList} scope=null - Object/NodeList/Array that forEach is iterating over, to use as the this value when executing callback.
- * @returns {}
+ * Helps with accessibility for keyboard only users.
+ *
+ * Learn more: https://git.io/vWdr2
  */
-// var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
-//
-// var hamburgers = document.querySelectorAll(".hamburger");
-// if (hamburgers.length > 0) {
-//     forEach(hamburgers, function(hamburger) {
-//         hamburger.addEventListener("click", function() {
-//             this.classList.toggle("is-active");
-//         }, false);
-//     });
-// }
+( function() {
+    var isIe = /(trident|msie)/i.test( navigator.userAgent );
+
+    if ( isIe && document.getElementById && window.addEventListener ) {
+        window.addEventListener( 'hashchange', function() {
+            var id = location.hash.substring( 1 ),
+                element;
+
+            if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
+                return;
+            }
+
+            element = document.getElementById( id );
+
+            if ( element ) {
+                if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) ) {
+                    element.tabIndex = -1;
+                }
+
+                element.focus();
+            }
+        }, false );
+    }
+} )();
