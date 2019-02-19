@@ -20,6 +20,19 @@
     text-decoration: none;
     color: white;
   }
+  .custom-logo {
+    max-height: 60px;
+    width: auto;
+    @include mq-up(lg) {
+      max-height: inherit;
+      width: 400px;
+    }
+  }
+  .wp-custom-logo & {
+    @include mq-up(lg) {
+      padding: 0;
+    }
+  }
 }
 
 .p-hamburger-button {
@@ -39,7 +52,6 @@
   }
   &.is-active {
     position: fixed;
-    top: 0;
     width: 100%;
     background: rgba( black, .5 );
     transition: all 1s ease;

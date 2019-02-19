@@ -14,6 +14,15 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="l-site-footer">
+		<?php if ( is_active_sidebar( 'footer-left' ) || is_active_sidebar( 'footer-center' ) || is_active_sidebar( 'footer-right' ) ) : ?>
+		<div class="p-footer-widget-area">
+			<div class="c-container p-footer-widget-area__container">
+				<?php dynamic_sidebar( 'footer-left' ); ?>
+				<?php dynamic_sidebar( 'footer-center' ); ?>
+				<?php dynamic_sidebar( 'footer-right' ); ?>
+			</div>
+		</div>
+		<?php endif; ?>
 		<div class="p-copyright">
 			<div class="p-copyright__inner c-container">
 				© <?php echo date( "Y" ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>

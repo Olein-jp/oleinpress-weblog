@@ -1,0 +1,6 @@
+.l-site {
+  padding-bottom: 60px;
+  @include mq-up(lg) {
+    padding-bottom: 0;
+  }
+}

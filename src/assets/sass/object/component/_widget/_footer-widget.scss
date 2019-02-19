@@ -1,0 +1,5 @@
+.c-footer-widget {
+  @include mq-up(lg) {
+    width: 30%;
+  }
+}

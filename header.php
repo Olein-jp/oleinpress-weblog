@@ -28,17 +28,29 @@
 		<div class="c-container l-site-header__inner">
 			<div class="p-site-branding">
 				<?php
-				the_custom_logo();
-				if ( is_front_page() && is_home() ) :
+				if ( has_custom_logo() ) : ?>
+					<?php if ( is_front_page() && is_home() ) :
+						?>
+						<h1 class="p-site-title"><?php the_custom_logo(); ?></h1>
+					<?php
+					else :
+						?>
+						<p class="p-site-title"><?php the_custom_logo(); ?></p>
+					<?php
+					endif;
 					?>
-					<h1 class="p-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-				else :
+				<?php else: ?>
+					<?php if ( is_front_page() && is_home() ) :
+						?>
+						<h1 class="p-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php
+					else :
+						?>
+						<p class="p-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php
+					endif;
 					?>
-					<p class="p-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-				endif;
-				?>
+				<?php endif; ?>
 			</div><!-- .site-branding -->
 			<button class="p-hamburger-button hamburger hamburger--collapse" type="button">
 				<span class="hamburger-box">
