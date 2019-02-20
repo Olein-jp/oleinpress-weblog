@@ -11,7 +11,7 @@ $updater = new GitHub_Theme_Updater( get_template(), 'Olein-jp', 'oleinpress-web
 add_filter(
 	'inc2734_github_theme_updater_zip_url',
 	function( $url ) {
-		if ( 0 !== strpos( $url, 'https://olein-design.com/' ) ) {
+		if ( 0 !== strpos( $url, 'https://olein-design.com/webhooks/weblog/' ) ) {
 			return false;
 		}
 		return $url;
