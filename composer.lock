@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2dee1bbc0a7adbdbe158e519fee6a23c",
+    "content-hash": "f5c0c16c37c95ae7a7fe0345507d8c8e",
     "packages": [
         {
             "name": "inc2734/wp-breadcrumbs",
@@ -53,6 +53,54 @@
             ],
             "description": "A library for WordPress breadcrumbs.",
             "time": "2018-07-27T12:57:18+00:00"
+        },
+        {
+            "name": "inc2734/wp-customizer-framework",
+            "version": "5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inc2734/wp-customizer-framework.git",
+                "reference": "30bf1ba0a8f252b5f5fbfa942d9e10960b9afee3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inc2734/wp-customizer-framework/zipball/30bf1ba0a8f252b5f5fbfa942d9e10960b9afee3",
+                "reference": "30bf1ba0a8f252b5f5fbfa942d9e10960b9afee3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "doctrine/instantiator": "1.0.4",
+                "myclabs/deep-copy": "1.7.0",
+                "pdepend/pdepend": "2.5.0",
+                "phpdocumentor/reflection-docblock": "3.2.2",
+                "phpmd/phpmd": "2.*",
+                "phpunit/php-token-stream": "1.4.11",
+                "phpunit/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "*",
+                "symfony/yaml": "3.4.1",
+                "wp-coding-standards/wpcs": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Inc2734\\WP_Customizer_Framework\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Takashi Kitajima",
+                    "email": "inc@2inc.org"
+                }
+            ],
+            "description": "A library for WordPress Customizer.",
+            "time": "2019-01-21T06:22:27+00:00"
         },
         {
             "name": "inc2734/wp-github-theme-updater",

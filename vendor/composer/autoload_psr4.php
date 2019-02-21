@@ -8,5 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'MwShareButtons\\' => array($vendorDir . '/inc2734/wp-mw-share-buttons'),
     'Inc2734\\WP_GitHub_Theme_Updater\\' => array($vendorDir . '/inc2734/wp-github-theme-updater/src'),
+    'Inc2734\\WP_Customizer_Framework\\' => array($vendorDir . '/inc2734/wp-customizer-framework/src'),
     'Inc2734\\WP_Breadcrumbs\\' => array($vendorDir . '/inc2734/wp-breadcrumbs/src'),
 );

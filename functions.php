@@ -183,7 +183,9 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer/customizer.php';
+require get_template_directory() . '/inc/customizer/initialize.php';
+require get_template_directory() . '/inc/customizer/panel-section-control.php';
+require get_template_directory() . '/inc/customizer/style.php';
 
 /**
  * Load Jetpack compatibility file.
@@ -254,3 +256,27 @@ function op_weblog_widget_tagcloud_custom( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'op_weblog_widget_tagcloud_custom' );
+
+/**
+ * There is a case that comes back to GitHub's zip url.
+ * In that case it returns false because it is illegal.
+ */
+add_filter(
+	'inc2734_github_theme_updater_zip_url',
+	function( $url ) {
+		if ( 0 !== strpos( $url, 'https://olein-design.com/' ) ) {
+			return false;
+		}
+		return $url;
+	}
+);
+
+/**
+ * Customize request URL that for updating
+ */
+add_filter(
+	'inc2734_github_theme_updater_request_url',
+	function( $url ) {
+		return 'https://olein-design.com/webhooks/weblog/response.json';
+	}
+);
