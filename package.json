@@ -28,7 +28,7 @@
     "packages": "npm run cleanup:packages && npm-run-all -p packages:*",
     "watch:css": "watch 'npm run css:style' ./src/assets/sass",
     "watch:image": "onchange 'src/assets/images' -e '**/*.DS_Store' -- npm run images",
-    "watch:php": "browser-sync start -p 'oleinpressweblog.wordpress' -f '**/*' 'assets/**'",
+    "watch:php": "browser-sync start -p 'oleinpress-weblog.wordpress' -f '**/*' 'assets/**'",
     "watch": "npm-run-all -p watch:*",
     "zip:pack": "composer install --no-dev && rsync -a --exclude='.*' --exclude='/node_modules' --exclude='*.config.js' --exclude='/src' . oleinpress-weblog",
     "zip:archive": "zip -9 -qmr oleinpress-weblog.zip oleinpress-weblog",
