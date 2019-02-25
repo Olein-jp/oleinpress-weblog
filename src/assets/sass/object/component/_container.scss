@@ -1,27 +1,31 @@
 .c-container {
   width: 100%;
   margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
   @include mq-up(md) {
     width: 750px;
   }
   @include mq-up(lg) {
     width: 980px;
+    padding-right: 0;
+    padding-left: 0;
   }
   @include mq-up(xl) {
     width: 1100px;
   }
   &_archive {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 100px;
-    @include mq-up(lg) {
-      padding-left: 0;
-      padding-right: 0;
-    }
+    //padding-left: 15px;
+    //padding-right: 15px;
+    //padding-bottom: 100px;
+    //@include mq-up(lg) {
+    //  padding-left: 0;
+    //  padding-right: 0;
+    //}
   }
   &_no-padding {
-    padding-right: 0;
-    padding-left: 0;
+    //padding-right: 0;
+    //padding-left: 0;
   }
 }
 
