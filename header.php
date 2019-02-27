@@ -43,7 +43,15 @@
 			<?php
 			if ( has_nav_menu( 'header-menu') ) :
 			?>
-			<nav id="site-navigation" class="l-header-menu">
+				<?php
+				$global_menu_horizontal_val = '';
+				if ( 'left' === get_theme_mod( 'global-menu-horizontal' ) ) {
+					$global_menu_horizontal_val = 'left';
+				} elseif ( 'center' === get_theme_mod( 'global-menu-horizontal' ) ) {
+					$global_menu_horizontal_val = 'center';
+				}
+				?>
+			<nav id="site-navigation" class="l-header-menu l-header-menu_<?php echo $global_menu_horizontal_val; ?>">
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'header-menu',

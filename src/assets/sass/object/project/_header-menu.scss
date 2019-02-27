@@ -17,6 +17,9 @@
     left: 0;
   }
   li {
+    .l-header-menu_center & {
+      text-align: left;
+    }
     &:first-child {
       a {
         border-top: 1px solid rgba( white, .1 );

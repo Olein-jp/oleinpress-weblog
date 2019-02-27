@@ -10,5 +10,14 @@
 }
 
 .l-header-menu {
-
+  &_left {
+    .p-header-menu {
+      text-align: left;
+    }
+  }
+  &_center {
+    .p-header-menu {
+      text-align: center;
+    }
+  }
 }

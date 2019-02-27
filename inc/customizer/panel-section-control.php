@@ -62,6 +62,36 @@ $control = Framework::get_control( 'site-header-layout' );
 $control->join( $section )->join( $panel );
 
 /**
+ * Global menu horizontal position section
+ * セクション：メニュー
+ */
+Framework::section(
+	'global-menu',
+	[
+		'title' => __( 'Global menu', 'op-weblog' ),
+		'description' => __( '', 'op-weblog' ),
+		'priority' => 150,
+	]
+);
+
+Framework::control(
+	'radio',
+	'global-menu-horizontal',
+	[
+		'label' => __( 'Horizontal positon of global menu','op-weblog' ),
+		'default' => 'left',
+		'choices' => array(
+			'center' => __( 'Center', 'op-weblog' ),
+			'left' => __( 'Left', 'op-weblog' ),
+		),
+	]
+);
+$panel   = Framework::get_panel( 'layout' );
+$section = Framework::get_section( 'global-menu' );
+$control = Framework::get_control( 'global-menu-horizontal' );
+$control->join( $section )->join( $panel );
+
+/**
  * Archive page section
  * セクション：アーカイブページ
  */
