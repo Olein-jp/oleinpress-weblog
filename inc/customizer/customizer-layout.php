@@ -1,27 +1,17 @@
 <?php
-use Inc2734\WP_Customizer_Framework\Framework;
-
-/*
- * Remove default panel
+/**
+ * Created by PhpStorm.
+ * User: kojikuno
+ * Date: 2019-02-27
+ * Time: 11:14
  */
-add_action( 'customize_register', 'op_remove_default_customizer_section' );
-function op_remove_default_customizer_section( $wp_customize ) {
-	// remove colors
-	$wp_customize->remove_section('colors');
-	// remove background image
-	$wp_customize->remove_section('background_image');
-	// remove header image
-	$wp_customize->remove_section('header_image');
-}
+
+use Inc2734\WP_Customizer_Framework\Framework;
 
 if ( ! is_customize_preview() ) {
 	return;
 }
 
-/***
- * Layout panel
- * パネル：レイアウト
- */
 Framework::panel(
 	'layout',
 	[
@@ -32,7 +22,6 @@ Framework::panel(
 
 /**
  * Header section
- * セクション：ヘッダー
  */
 Framework::section(
 	'site-header',
@@ -63,7 +52,6 @@ $control->join( $section )->join( $panel );
 
 /**
  * Global menu horizontal position section
- * セクション：メニュー
  */
 Framework::section(
 	'global-menu',
@@ -93,7 +81,6 @@ $control->join( $section )->join( $panel );
 
 /**
  * Archive page section
- * セクション：アーカイブページ
  */
 Framework::section(
 	'archive-page',
@@ -120,40 +107,4 @@ Framework::control(
 $panel   = Framework::get_panel( 'layout' );
 $section = Framework::get_section( 'archive-page' );
 $control = Framework::get_control( 'archive-page-layout' );
-$control->join( $section )->join( $panel );
-
-/***
- * Design panel
- * パネル：デザイン
- */
-Framework::panel(
-	'design',
-	[
-		'title' => __( 'Design', 'op-weblog' ),
-		'priority' => 1020,
-	]
-);
-
-Framework::section(
-	'basic',
-	[
-		'title' => __( 'Basic design', 'op-weblog' ),
-		'description' => __( '', 'op-weblog' ),
-		'priority' => 130,
-	]
-);
-
-Framework::control(
-	'color',
-	'accent-color',
-	[
-		'label' => __( 'Accent color', 'op-weblog' ),
-		'default' => '#96ceb4',
-		'priority' => 100,
-	]
-);
-
-$panel   = Framework::get_panel( 'design' );
-$section = Framework::get_section( 'basic' );
-$control = Framework::get_control( 'accent-color' );
 $control->join( $section )->join( $panel );

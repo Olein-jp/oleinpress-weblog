@@ -184,8 +184,8 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer/initialize.php';
-require get_template_directory() . '/inc/customizer/panel-section-control.php';
-require get_template_directory() . '/inc/customizer/style.php';
+require get_template_directory() . '/inc/customizer/customizer.php';
+require get_template_directory() . '/inc/customizer/customizer-styles.php';
 
 /**
  * Load Jetpack compatibility file.
