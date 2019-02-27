@@ -82,3 +82,33 @@ $panel   = Framework::get_panel( 'seo' );
 $section = Framework::get_section( 'google-search-console' );
 $control = Framework::get_control( 'op-google-search-console-verification' );
 $control->join( $section )->join( $panel );
+
+/**
+ * section : Google Tag Manager
+ */
+Framework::section(
+	'google-tag-manager',
+	[
+		'title' => __( 'Google Tag Manager', 'op-weblog' ),
+		'description' => __( '', 'op-weblog' ),
+		'priority' => 170,
+	]
+);
+
+/**
+ * control : Google tag manager tracking is
+ */
+Framework::control(
+	'text',
+	'op-google tag-manager-tracking-id',
+	[
+		'label' => __( 'Tag manager ID', 'op-weblog' ),
+		'description' => __( 'e.g. GTM-X11X1XX', 'op-weblog' ),
+		'priority' => 100,
+	]
+);
+
+$panel   = Framework::get_panel( 'seo' );
+$section = Framework::get_section( 'google-tag-manager' );
+$control = Framework::get_control( 'op-google tag-manager-tracking-id' );
+$control->join( $section )->join( $panel );

@@ -16,7 +16,16 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+	<?php
+	$tag_manager_tracking_id = get_theme_mod( 'op-google tag-manager-tracking-id' );
+	if ( $tag_manager_tracking_id && ! is_user_logged_in() ) :
+	?>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','<?php echo $tag_manager_tracking_id; ?>');</script>
+	<?php endif; ?>
 	<?php wp_head(); ?>
 	<?php
 	$search_console_verification = get_theme_mod( 'op-google-search-console-verification' );
@@ -39,7 +48,7 @@
 
         gtag('js', new Date());
 
-        gtag('config', "<?php echo $tracking_id; ?>");
+        gtag('config', '<?php echo $tracking_id; ?>');
 	</script>
 	<?php
 	endif;
@@ -47,6 +56,12 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php if ( $tag_manager_tracking_id && ! is_user_logged_in() ) : ?>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $tag_manager_tracking_id; ?>"
+				  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<?php endif; ?>
 <div id="page" class="l-site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'op-weblog' ); ?></a>
 
