@@ -280,3 +280,9 @@ add_filter(
 		return 'https://olein-design.com/webhooks/weblog/response.json';
 	}
 );
+
+/**
+ * wp share buttons
+ * @link https://github.com/inc2734/wp-share-buttons
+ */
+require get_template_directory() . '/inc/wp-share-buttons.php';

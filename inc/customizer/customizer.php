@@ -28,3 +28,8 @@ require get_template_directory() . '/inc/customizer/customizer-design.php';
  * SEO
  */
 require get_template_directory() . '/inc/customizer/customizer-seo.php';
+
+/***
+ * SNS
+ */
+require get_template_directory() . '/inc/customizer/customizer-sns.php';

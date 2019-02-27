@@ -39,6 +39,9 @@ get_header();
 						<?php endif; ?>
 					</ul>
 				</header>
+				<?php
+					get_template_part( 'template-parts/share-buttons' );
+				?>
 				<figure class="c-entry-thumbnail">
 					<?php
 					if ( has_post_thumbnail() ) :

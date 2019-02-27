@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5c0c16c37c95ae7a7fe0345507d8c8e",
+    "content-hash": "d65d88eda81e355051fe65ea026b39fe",
     "packages": [
         {
             "name": "inc2734/wp-breadcrumbs",
@@ -183,6 +183,104 @@
             ],
             "description": "Adds social share buttons.",
             "time": "2017-10-10T01:53:21+00:00"
+        },
+        {
+            "name": "inc2734/wp-ogp",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inc2734/wp-ogp.git",
+                "reference": "f6f6ac80f4a945bb256849ba7b625147a87952b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inc2734/wp-ogp/zipball/f6f6ac80f4a945bb256849ba7b625147a87952b9",
+                "reference": "f6f6ac80f4a945bb256849ba7b625147a87952b9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "doctrine/instantiator": "1.0.4",
+                "myclabs/deep-copy": "1.7.0",
+                "pdepend/pdepend": "2.5.0",
+                "phpdocumentor/reflection-docblock": "3.2.2",
+                "phpmd/phpmd": "2.*",
+                "phpunit/php-token-stream": "1.4.11",
+                "phpunit/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "*",
+                "symfony/yaml": "3.4.1",
+                "wp-coding-standards/wpcs": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Inc2734\\WP_OGP\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Takashi Kitajima",
+                    "email": "inc@2inc.org"
+                }
+            ],
+            "description": "A library for WordPress OGP.",
+            "time": "2019-01-22T00:13:34+00:00"
+        },
+        {
+            "name": "inc2734/wp-share-buttons",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inc2734/wp-share-buttons.git",
+                "reference": "cd032893ca083a343f5871e855cce68f4ede3a17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inc2734/wp-share-buttons/zipball/cd032893ca083a343f5871e855cce68f4ede3a17",
+                "reference": "cd032893ca083a343f5871e855cce68f4ede3a17",
+                "shasum": ""
+            },
+            "require": {
+                "inc2734/wp-ogp": "^2.0",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "doctrine/instantiator": "1.0.4",
+                "myclabs/deep-copy": "1.7.0",
+                "pdepend/pdepend": "2.5.0",
+                "phpdocumentor/reflection-docblock": "3.2.2",
+                "phpmd/phpmd": "2.*",
+                "phpunit/php-token-stream": "1.4.11",
+                "phpunit/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "*",
+                "symfony/yaml": "3.4.1",
+                "wp-coding-standards/wpcs": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Inc2734\\WP_Share_Buttons\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Takashi Kitajima",
+                    "email": "inc@2inc.org",
+                    "homepage": "https://2inc.org"
+                }
+            ],
+            "description": "A library for WordPress theme that adds social share buttons.",
+            "time": "2019-01-22T01:29:09+00:00"
         }
     ],
     "packages-dev": [],
