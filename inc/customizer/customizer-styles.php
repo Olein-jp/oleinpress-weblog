@@ -4,7 +4,7 @@ use Inc2734\WP_Customizer_Framework\Style;
 add_action(
 	'inc2734_wp_customizer_framework_load_styles',
 	function() {
-		$accent_color = get_theme_mod( 'accent-color' );
+		$accent_color = get_theme_mod( 'op-accent-color' );
 
 		Style::register(
 			[

@@ -17,8 +17,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head();
-	
+	<?php wp_head(); ?>
+	<?php
+	$search_console_verification = get_theme_mod( 'op-google-search-console-verification' );
+	if ( $search_console_verification ) {
+		echo '<meta name="google-site-verification" content="' . $search_console_verification . '" />';
+	}
+
 	$tracking_id = get_theme_mod( 'google-analytics-tracking-id' );
 	if ( $tracking_id && ! is_user_logged_in() ) :
 	?>
@@ -48,11 +53,11 @@
 	<header id="masthead" class="l-site-header">
 		<div class="c-container l-site-header__inner">
 			<?php
-			if ( 'center' === get_theme_mod( 'site-header-layout') ) {
+			if ( 'center' === get_theme_mod( 'op-site-header-layout') ) {
 				get_template_part( 'template-parts/site-header-center' );
-			} elseif ( 'right' === get_theme_mod( 'site-header-layout') ) {
+			} elseif ( 'right' === get_theme_mod( 'op-site-header-layout') ) {
 				get_template_part( 'template-parts/site-header-right' );
-			} elseif ( 'left' === get_theme_mod( 'site-header-layout') ) {
+			} elseif ( 'left' === get_theme_mod( 'op-site-header-layout') ) {
 				get_template_part( 'template-parts/site-header-left' );
 			}
 			?>
@@ -66,9 +71,9 @@
 			?>
 				<?php
 				$global_menu_horizontal_val = '';
-				if ( 'left' === get_theme_mod( 'global-menu-horizontal' ) ) {
+				if ( 'left' === get_theme_mod( 'op-global-menu-horizontal' ) ) {
 					$global_menu_horizontal_val = 'left';
-				} elseif ( 'center' === get_theme_mod( 'global-menu-horizontal' ) ) {
+				} elseif ( 'center' === get_theme_mod( 'op-global-menu-horizontal' ) ) {
 					$global_menu_horizontal_val = 'center';
 				}
 				?>

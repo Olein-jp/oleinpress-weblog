@@ -34,7 +34,7 @@ Framework::section(
 
 Framework::control(
 	'radio',
-	'site-header-layout',
+	'op-site-header-layout',
 	[
 		'label' => __( 'Site Header Layout','op-weblog' ),
 		'default' => 'center',
@@ -47,7 +47,7 @@ Framework::control(
 );
 $panel   = Framework::get_panel( 'layout' );
 $section = Framework::get_section( 'site-header' );
-$control = Framework::get_control( 'site-header-layout' );
+$control = Framework::get_control( 'op-site-header-layout' );
 $control->join( $section )->join( $panel );
 
 /**
@@ -64,7 +64,7 @@ Framework::section(
 
 Framework::control(
 	'radio',
-	'global-menu-horizontal',
+	'op-global-menu-horizontal',
 	[
 		'label' => __( 'Horizontal positon of global menu','op-weblog' ),
 		'default' => 'left',
@@ -76,7 +76,7 @@ Framework::control(
 );
 $panel   = Framework::get_panel( 'layout' );
 $section = Framework::get_section( 'global-menu' );
-$control = Framework::get_control( 'global-menu-horizontal' );
+$control = Framework::get_control( 'op-global-menu-horizontal' );
 $control->join( $section )->join( $panel );
 
 /**
@@ -93,7 +93,7 @@ Framework::section(
 
 Framework::control(
 	'radio',
-	'archive-page-layout',
+	'op-archive-page-layout',
 	[
 		'label' => __( 'Page Layout','op-weblog' ),
 		'default' => 'one-column',
@@ -106,5 +106,5 @@ Framework::control(
 
 $panel   = Framework::get_panel( 'layout' );
 $section = Framework::get_section( 'archive-page' );
-$control = Framework::get_control( 'archive-page-layout' );
+$control = Framework::get_control( 'op-archive-page-layout' );
 $control->join( $section )->join( $panel );

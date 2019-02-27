@@ -31,7 +31,7 @@ Framework::section(
 
 Framework::control(
 	'color',
-	'accent-color',
+	'op-accent-color',
 	[
 		'label' => __( 'Accent color', 'op-weblog' ),
 		'default' => '#96ceb4',
@@ -41,5 +41,5 @@ Framework::control(
 
 $panel   = Framework::get_panel( 'design' );
 $section = Framework::get_section( 'basic' );
-$control = Framework::get_control( 'accent-color' );
+$control = Framework::get_control( 'op-accent-color' );
 $control->join( $section )->join( $panel );
