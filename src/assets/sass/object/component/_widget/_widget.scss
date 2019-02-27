@@ -34,6 +34,15 @@
       color: $white;
     }
   }
+  /* in site-header */
+  &_in-site-header {
+    padding: 5px;
+    margin-bottom: 0;
+    text-align: center;
+    .widgettitle {
+      display: none;
+    }
+  }
 }
 
 /**

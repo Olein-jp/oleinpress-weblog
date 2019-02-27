@@ -30,12 +30,47 @@ Framework::panel(
 	]
 );
 
+/**
+ * Header section
+ * セクション：ヘッダー
+ */
+Framework::section(
+	'site-header',
+	[
+		'title' => __( 'Header Layout', 'op-weblog' ),
+		'description' => __( '', 'op-weblog' ),
+		'priority' => 130,
+	]
+);
+
+Framework::control(
+	'radio',
+	'site-header-layout',
+	[
+		'label' => __( 'Site Header Layout','op-weblog' ),
+		'default' => 'center',
+		'choices' => array(
+			'center' => __( 'Center', 'op-weblog' ),
+			'left' => __( 'Left', 'op-weblog' ),
+			'right' => __( 'Right', 'op-weblog' ),
+		),
+	]
+);
+$panel   = Framework::get_panel( 'layout' );
+$section = Framework::get_section( 'site-header' );
+$control = Framework::get_control( 'site-header-layout' );
+$control->join( $section )->join( $panel );
+
+/**
+ * Archive page section
+ * セクション：アーカイブページ
+ */
 Framework::section(
 	'archive-page',
 	[
 		'title' => __( 'Page layout', 'op-weblog' ),
 		'description' => __( '', 'op-weblog' ),
-		'priority' => 130,
+		'priority' => 150,
 	]
 );
 
