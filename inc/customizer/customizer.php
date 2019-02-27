@@ -23,3 +23,8 @@ require get_template_directory() . '/inc/customizer/customizer-layout.php';
  * Design
  */
 require get_template_directory() . '/inc/customizer/customizer-design.php';
+
+/***
+ * SEO
+ */
+require get_template_directory() . '/inc/customizer/customizer-seo.php';

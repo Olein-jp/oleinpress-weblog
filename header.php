@@ -17,7 +17,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
+	<?php wp_head();
+	
+	$tracking_id = get_theme_mod( 'google-analytics-tracking-id' );
+	if ( $tracking_id && ! is_user_logged_in() ) :
+	?>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async
+			src="https://www.googletagmanager.com/gtag/js?id=<?php echo $tracking_id; ?>"></script>
+	<script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', "<?php echo $tracking_id; ?>");
+	</script>
+	<?php
+	endif;
+	?>
 </head>
 
 <body <?php body_class(); ?>>
