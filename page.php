@@ -39,6 +39,9 @@ get_header();
 						<?php endif; ?>
 					</ul>
 				</header>
+				<?php
+				get_template_part( 'template-parts/share-buttons' );
+				?>
 				<figure class="c-entry-thumbnail">
 					<?php
 					if ( has_post_thumbnail() ) :
@@ -51,6 +54,10 @@ get_header();
 				<div class="c-entry-content">
 					<?php the_content(); ?>
 				</div>
+				<?php
+				if ( 'show' === get_theme_mod( 'op-fb-like-box-show-page' ) ) {
+					get_template_part( 'template-parts/fb-like-box' );
+				} ?>
 			</article>
 
 			<?php

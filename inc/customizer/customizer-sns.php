@@ -90,3 +90,75 @@ $panel   = Framework::get_panel( 'sns' );
 $section = Framework::get_section( 'share-buttons' );
 $control = Framework::get_control( 'op-share-buttons-type' );
 $control->join( $section )->join( $panel );
+
+/**
+ * section : Like box
+ */
+Framework::section(
+	'like-box',
+	[
+		'title' => __( 'Like box', 'op-weblog' ),
+		'priority' => 130,
+	]
+);
+
+/**
+ * control : Facebook like box name setting
+ */
+Framework::control(
+	'text',
+	'op-fb-like-box-name',
+	[
+		'label' => __( 'Facebook Page name', 'op-weblog' ),
+		'description' => sprintf(
+			__( 'Please enter part %1$s of %2$s', 'op-weblog'),
+			'<code>xxxxxxx</code>',
+			'<code>https://facebook.com/xxxxxx</code>'
+		),
+	]
+);
+
+$panel   = Framework::get_panel( 'sns' );
+$section = Framework::get_section( 'like-box' );
+$control = Framework::get_control( 'op-fb-like-box-name' );
+$control->join( $section )->join( $panel );
+
+/**
+ * control : Show Facebook like box setting for post
+ */
+Framework::control(
+	'radio',
+	'op-fb-like-box-show-post',
+	[
+		'label' => __( 'Show Facebook like box for post','op-weblog' ),
+		'default' => 'show',
+		'choices' => array(
+			'show' => __( 'Show', 'op-weblog' ),
+			'notshow' => __( 'Not show', 'op-weblog' ),
+		),
+	]
+);
+$panel   = Framework::get_panel( 'sns' );
+$section = Framework::get_section( 'like-box' );
+$control = Framework::get_control( 'op-fb-like-box-show-post' );
+$control->join( $section )->join( $panel );
+
+/**
+ * control : Show Facebook like box setting for post
+ */
+Framework::control(
+	'radio',
+	'op-fb-like-box-show-page',
+	[
+		'label' => __( 'Show Facebook like box for page','op-weblog' ),
+		'default' => 'show',
+		'choices' => array(
+			'show' => __( 'Show', 'op-weblog' ),
+			'notshow' => __( 'Not show', 'op-weblog' ),
+		),
+	]
+);
+$panel   = Framework::get_panel( 'sns' );
+$section = Framework::get_section( 'like-box' );
+$control = Framework::get_control( 'op-fb-like-box-show-page' );
+$control->join( $section )->join( $panel );

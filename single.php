@@ -54,6 +54,10 @@ get_header();
 				<div class="c-entry-content">
 					<?php the_content(); ?>
 				</div>
+				<?php
+				if ( 'show' === get_theme_mod( 'op-fb-like-box-show-post' ) ) {
+					get_template_part( 'template-parts/fb-like-box' );
+				} ?>
 			</article>
 
 			<?php
