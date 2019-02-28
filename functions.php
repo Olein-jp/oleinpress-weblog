@@ -286,3 +286,21 @@ add_filter(
  * @link https://github.com/inc2734/wp-share-buttons
  */
 require get_template_directory() . '/inc/wp-share-buttons.php';
+
+/**
+ * Google Adsense verification code
+ */
+//add_action(
+//	'wp_enqueue_scripts',
+//	function() {
+//		if ( ! get_option( 'op-google-adsense-verification-code' ) ) {
+//			return;
+//		}
+//
+//		wp_add_inline_script(
+//			'google-adsense',
+//			get_option( 'op-google-adsense-verification-code' ),
+//			'after'
+//		);
+//	}
+//);

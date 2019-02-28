@@ -27,34 +27,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','<?php echo $tag_manager_tracking_id; ?>');</script>
 	<?php endif; ?>
 	<?php wp_head(); ?>
-	<?php
-	$search_console_verification = get_theme_mod( 'op-google-search-console-verification' );
-	if ( $search_console_verification ) {
-		echo '<meta name="google-site-verification" content="' . $search_console_verification . '" />';
-	}
-
-	$tracking_id = get_theme_mod( 'google-analytics-tracking-id' );
-	if ( $tracking_id && ! is_user_logged_in() ) :
-	?>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async
-			src="https://www.googletagmanager.com/gtag/js?id=<?php echo $tracking_id; ?>"></script>
-	<script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', '<?php echo $tracking_id; ?>');
-	</script>
-	<?php
-	endif;
-	?>
+	<?php get_template_part( 'template-parts/head-search-console-verification' ); ?>
+	<?php get_template_part( 'template-parts/head-google-analytics' ); ?>
+	<?php get_template_part( 'template-parts/head-google-adsense-verification' ); ?>
 </head>
-
 <body <?php body_class(); ?>>
 <?php if ( $tag_manager_tracking_id && ! is_user_logged_in() ) : ?>
 <!-- Google Tag Manager (noscript) -->

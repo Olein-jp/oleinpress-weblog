@@ -16,7 +16,7 @@ Framework::panel(
 	'sns',
 	[
 		'title' => __( 'SNS', 'op-weblog' ),
-		'priority' => 1050,
+		'priority' => 1040,
 	]
 );
 
