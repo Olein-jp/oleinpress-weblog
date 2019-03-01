@@ -8,6 +8,64 @@
 
 use Inc2734\WP_Customizer_Framework\Framework;
 
+Framework::control(
+	'radio',
+	'op-site-header-layout',
+	[
+		'label' => __( 'Site Header Layout','op-weblog' ),
+		'default' => 'center',
+		'choices' => array(
+			'center' => __( 'Center', 'op-weblog' ),
+			'left' => __( 'Left', 'op-weblog' ),
+			'right' => __( 'Right', 'op-weblog' ),
+		),
+	]
+);
+
+Framework::control(
+	'radio',
+	'op-global-menu-horizontal',
+	[
+		'label' => __( 'Horizontal positon of global menu','op-weblog' ),
+		'default' => 'left',
+		'choices' => array(
+			'center' => __( 'Center', 'op-weblog' ),
+			'left' => __( 'Left', 'op-weblog' ),
+		),
+	]
+);
+
+Framework::control(
+	'radio',
+	'op-archive-page-layout',
+	[
+		'label' => __( 'Page Layout','op-weblog' ),
+		'default' => 'one-column',
+		'choices' => array(
+			'one-column' => 'One column',
+			'two-column' => 'Two column',
+		),
+	]
+);
+
+Framework::control(
+	'radio',
+	'op-site-footer-col-number',
+	[
+		'label' => __( 'Number of site footer columns','op-weblog' ),
+		'default' => '3',
+		'choices' => array(
+			'2' => __( 'Two columns', 'op-weblog' ),
+			'3' => __( 'Three columns', 'op-weblog' ),
+			'4' => __( 'Four columns', 'op-weblog' ),
+		),
+	]
+);
+
+if ( ! is_customize_preview() ) {
+	return;
+}
+
 Framework::panel(
 	'layout',
 	[
@@ -28,24 +86,6 @@ Framework::section(
 	]
 );
 
-Framework::control(
-	'radio',
-	'op-site-header-layout',
-	[
-		'label' => __( 'Site Header Layout','op-weblog' ),
-		'default' => 'center',
-		'choices' => array(
-			'center' => __( 'Center', 'op-weblog' ),
-			'left' => __( 'Left', 'op-weblog' ),
-			'right' => __( 'Right', 'op-weblog' ),
-		),
-	]
-);
-
-if ( ! is_customize_preview() ) {
-	return;
-}
-
 $panel   = Framework::get_panel( 'layout' );
 $section = Framework::get_section( 'site-header' );
 $control = Framework::get_control( 'op-site-header-layout' );
@@ -62,23 +102,6 @@ Framework::section(
 		'priority' => 150,
 	]
 );
-
-Framework::control(
-	'radio',
-	'op-global-menu-horizontal',
-	[
-		'label' => __( 'Horizontal positon of global menu','op-weblog' ),
-		'default' => 'left',
-		'choices' => array(
-			'center' => __( 'Center', 'op-weblog' ),
-			'left' => __( 'Left', 'op-weblog' ),
-		),
-	]
-);
-
-if ( ! is_customize_preview() ) {
-	return;
-}
 
 $panel   = Framework::get_panel( 'layout' );
 $section = Framework::get_section( 'global-menu' );
@@ -97,23 +120,6 @@ Framework::section(
 	]
 );
 
-Framework::control(
-	'radio',
-	'op-archive-page-layout',
-	[
-		'label' => __( 'Page Layout','op-weblog' ),
-		'default' => 'one-column',
-		'choices' => array(
-			'one-column' => 'One column',
-			'two-column' => 'Two column',
-		),
-	]
-);
-
-if ( ! is_customize_preview() ) {
-	return;
-}
-
 $panel   = Framework::get_panel( 'layout' );
 $section = Framework::get_section( 'archive-page' );
 $control = Framework::get_control( 'op-archive-page-layout' );
@@ -131,6 +137,7 @@ Framework::section(
 	]
 );
 
+<<<<<<< HEAD
 Framework::control(
 	'radio',
 	'op-site-footer-col-num',
@@ -153,3 +160,9 @@ $panel   = Framework::get_panel( 'layout' );
 $section = Framework::get_section( 'site-footer' );
 $control = Framework::get_control( 'op-site-footer-col-num' );
 $control->join( $section )->join( $panel );
+=======
+$panel   = Framework::get_panel( 'layout' );
+$section = Framework::get_section( 'site-footer' );
+$control = Framework::get_control( 'op-site-footer-col-number' );
+$control->join( $section )->join( $panel );
+>>>>>>> 77e392dab253280197e2cd403ab665cd41f94015
