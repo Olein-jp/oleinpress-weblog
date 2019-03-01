@@ -8,10 +8,6 @@
 
 use Inc2734\WP_Customizer_Framework\Framework;
 
-if ( ! is_customize_preview() ) {
-	return;
-}
-
 Framework::panel(
 	'layout',
 	[
@@ -45,6 +41,11 @@ Framework::control(
 		),
 	]
 );
+
+if ( ! is_customize_preview() ) {
+	return;
+}
+
 $panel   = Framework::get_panel( 'layout' );
 $section = Framework::get_section( 'site-header' );
 $control = Framework::get_control( 'op-site-header-layout' );
@@ -74,6 +75,11 @@ Framework::control(
 		),
 	]
 );
+
+if ( ! is_customize_preview() ) {
+	return;
+}
+
 $panel   = Framework::get_panel( 'layout' );
 $section = Framework::get_section( 'global-menu' );
 $control = Framework::get_control( 'op-global-menu-horizontal' );
@@ -87,7 +93,7 @@ Framework::section(
 	[
 		'title' => __( 'Page layout', 'op-weblog' ),
 		'description' => __( '', 'op-weblog' ),
-		'priority' => 150,
+		'priority' => 170,
 	]
 );
 
@@ -104,7 +110,46 @@ Framework::control(
 	]
 );
 
+if ( ! is_customize_preview() ) {
+	return;
+}
+
 $panel   = Framework::get_panel( 'layout' );
 $section = Framework::get_section( 'archive-page' );
 $control = Framework::get_control( 'op-archive-page-layout' );
+$control->join( $section )->join( $panel );
+
+/**
+ * Global menu horizontal position section
+ */
+Framework::section(
+	'site-footer',
+	[
+		'title' => __( 'Footer layout', 'op-weblog' ),
+		'description' => __( '', 'op-weblog' ),
+		'priority' => 190,
+	]
+);
+
+Framework::control(
+	'radio',
+	'op-site-footer-col-number',
+	[
+		'label' => __( 'Number of site footer columns','op-weblog' ),
+		'default' => '3',
+		'choices' => array(
+			'2' => __( 'Two columns', 'op-weblog' ),
+			'3' => __( 'Three columns', 'op-weblog' ),
+			'4' => __( 'Four columns', 'op-weblog' ),
+		),
+	]
+);
+
+if ( ! is_customize_preview() ) {
+	return;
+}
+
+$panel   = Framework::get_panel( 'layout' );
+$section = Framework::get_section( 'site-footer' );
+$control = Framework::get_control( 'op-site-footer-col-number' );
 $control->join( $section )->join( $panel );
