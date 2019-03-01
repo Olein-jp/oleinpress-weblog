@@ -5,12 +5,37 @@
     @include mq-up(lg) {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+  &_2 {
+    .c-footer-widget {
+      width: 100%;
+      @include mq-up(md) {
+        width: 49%;
+      }
+    }
+  }
+  &_3 {
+    .c-footer-widget {
+      width: 100%;
+      @include mq-up(md) {
+        width: 32%;
+      }
+    }
+  }
+  &_4 {
+    .c-footer-widget {
+      width: 100%;
+      @include mq-up(md) {
+        width: 23.5%;
+      }
     }
   }
 }
 
 .p-footer-widget {
   @include mq-up(lg) {
-    width: 33%;
+    //width: 33%;
   }
 }

@@ -133,10 +133,10 @@ Framework::section(
 
 Framework::control(
 	'radio',
-	'op-site-footer-col-number',
+	'op-site-footer-col-num',
 	[
 		'label' => __( 'Number of site footer columns','op-weblog' ),
-		'default' => '3',
+		'default' => 'demo',
 		'choices' => array(
 			'2' => __( 'Two columns', 'op-weblog' ),
 			'3' => __( 'Three columns', 'op-weblog' ),
@@ -151,5 +151,5 @@ if ( ! is_customize_preview() ) {
 
 $panel   = Framework::get_panel( 'layout' );
 $section = Framework::get_section( 'site-footer' );
-$control = Framework::get_control( 'op-site-footer-col-number' );
+$control = Framework::get_control( 'op-site-footer-col-num' );
 $control->join( $section )->join( $panel );

@@ -12,14 +12,11 @@
 ?>
 
 	</div><!-- #content -->
-
 	<footer id="colophon" class="l-site-footer">
-		<?php if ( is_active_sidebar( 'footer-left' ) || is_active_sidebar( 'footer-center' ) || is_active_sidebar( 'footer-right' ) ) : ?>
+		<?php if ( is_active_sidebar( 'footer' ) && get_theme_mod( 'op-site-footer-col-number' ) ) : ?>
 		<div class="p-footer-widget-area">
-			<div class="c-container p-footer-widget-area__container">
-				<?php dynamic_sidebar( 'footer-left' ); ?>
-				<?php dynamic_sidebar( 'footer-center' ); ?>
-				<?php dynamic_sidebar( 'footer-right' ); ?>
+			<div class="c-container p-footer-widget-area__container p-footer-widget-area_<?php echo get_theme_mod( 'op-site-footer-col-num' ); ?>">
+				<?php dynamic_sidebar( 'footer' ); ?>
 			</div>
 		</div>
 		<?php endif; ?>

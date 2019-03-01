@@ -116,34 +116,15 @@ function op_weblog_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Left', 'op-weblog' ),
-		'id'            => 'footer-left',
+		'name'          => esc_html__( 'Footer', 'op-weblog' ),
+		'id'            => 'footer',
 		'description'   => esc_html__( 'Add widgets here.', 'op-weblog' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s c-footer-widget p-footer-widget_left">',
+		'before_widget' => '<section id="%1$s" class="widget %2$s c-footer-widget">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Center', 'op-weblog' ),
-		'id'            => 'footer-center',
-		'description'   => esc_html__( 'Add widgets here.', 'op-weblog' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s c-footer-widget p-footer-widget_center">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Right', 'op-weblog' ),
-		'id'            => 'footer-right',
-		'description'   => esc_html__( 'Add widgets here.', 'op-weblog' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s c-footer-widget p-footer-widget_right">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
 }
 add_action( 'widgets_init', 'op_weblog_widgets_init' );
 

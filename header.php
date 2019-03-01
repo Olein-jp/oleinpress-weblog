@@ -32,6 +32,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<?php get_template_part( 'template-parts/head-google-adsense-verification' ); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php
+echo get_theme_mod( 'op-site-header-layout' );
+echo get_theme_mod( 'op-site-footer-col-num' );
+?>
+
 <?php if ( $tag_manager_tracking_id && ! is_user_logged_in() ) : ?>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $tag_manager_tracking_id; ?>"
