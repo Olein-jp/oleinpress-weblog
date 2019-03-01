@@ -8,26 +8,6 @@
 
 use Inc2734\WP_Customizer_Framework\Framework;
 
-Framework::panel(
-	'layout',
-	[
-		'title' => __( 'Layout', 'op-weblog' ),
-		'priority' => 1010,
-	]
-);
-
-/**
- * Header section
- */
-Framework::section(
-	'site-header',
-	[
-		'title' => __( 'Header Layout', 'op-weblog' ),
-		'description' => __( '', 'op-weblog' ),
-		'priority' => 130,
-	]
-);
-
 Framework::control(
 	'radio',
 	'op-site-header-layout',
@@ -39,27 +19,6 @@ Framework::control(
 			'left' => __( 'Left', 'op-weblog' ),
 			'right' => __( 'Right', 'op-weblog' ),
 		),
-	]
-);
-
-if ( ! is_customize_preview() ) {
-	return;
-}
-
-$panel   = Framework::get_panel( 'layout' );
-$section = Framework::get_section( 'site-header' );
-$control = Framework::get_control( 'op-site-header-layout' );
-$control->join( $section )->join( $panel );
-
-/**
- * Global menu horizontal position section
- */
-Framework::section(
-	'global-menu',
-	[
-		'title' => __( 'Global menu', 'op-weblog' ),
-		'description' => __( '', 'op-weblog' ),
-		'priority' => 150,
 	]
 );
 
@@ -76,27 +35,6 @@ Framework::control(
 	]
 );
 
-if ( ! is_customize_preview() ) {
-	return;
-}
-
-$panel   = Framework::get_panel( 'layout' );
-$section = Framework::get_section( 'global-menu' );
-$control = Framework::get_control( 'op-global-menu-horizontal' );
-$control->join( $section )->join( $panel );
-
-/**
- * Archive page section
- */
-Framework::section(
-	'archive-page',
-	[
-		'title' => __( 'Page layout', 'op-weblog' ),
-		'description' => __( '', 'op-weblog' ),
-		'priority' => 170,
-	]
-);
-
 Framework::control(
 	'radio',
 	'op-archive-page-layout',
@@ -107,27 +45,6 @@ Framework::control(
 			'one-column' => 'One column',
 			'two-column' => 'Two column',
 		),
-	]
-);
-
-if ( ! is_customize_preview() ) {
-	return;
-}
-
-$panel   = Framework::get_panel( 'layout' );
-$section = Framework::get_section( 'archive-page' );
-$control = Framework::get_control( 'op-archive-page-layout' );
-$control->join( $section )->join( $panel );
-
-/**
- * Global menu horizontal position section
- */
-Framework::section(
-	'site-footer',
-	[
-		'title' => __( 'Footer layout', 'op-weblog' ),
-		'description' => __( '', 'op-weblog' ),
-		'priority' => 190,
 	]
 );
 
@@ -148,6 +65,77 @@ Framework::control(
 if ( ! is_customize_preview() ) {
 	return;
 }
+
+Framework::panel(
+	'layout',
+	[
+		'title' => __( 'Layout', 'op-weblog' ),
+		'priority' => 1010,
+	]
+);
+
+/**
+ * Header section
+ */
+Framework::section(
+	'site-header',
+	[
+		'title' => __( 'Header Layout', 'op-weblog' ),
+		'description' => __( '', 'op-weblog' ),
+		'priority' => 130,
+	]
+);
+
+$panel   = Framework::get_panel( 'layout' );
+$section = Framework::get_section( 'site-header' );
+$control = Framework::get_control( 'op-site-header-layout' );
+$control->join( $section )->join( $panel );
+
+/**
+ * Global menu horizontal position section
+ */
+Framework::section(
+	'global-menu',
+	[
+		'title' => __( 'Global menu', 'op-weblog' ),
+		'description' => __( '', 'op-weblog' ),
+		'priority' => 150,
+	]
+);
+
+$panel   = Framework::get_panel( 'layout' );
+$section = Framework::get_section( 'global-menu' );
+$control = Framework::get_control( 'op-global-menu-horizontal' );
+$control->join( $section )->join( $panel );
+
+/**
+ * Archive page section
+ */
+Framework::section(
+	'archive-page',
+	[
+		'title' => __( 'Page layout', 'op-weblog' ),
+		'description' => __( '', 'op-weblog' ),
+		'priority' => 170,
+	]
+);
+
+$panel   = Framework::get_panel( 'layout' );
+$section = Framework::get_section( 'archive-page' );
+$control = Framework::get_control( 'op-archive-page-layout' );
+$control->join( $section )->join( $panel );
+
+/**
+ * Global menu horizontal position section
+ */
+Framework::section(
+	'site-footer',
+	[
+		'title' => __( 'Footer layout', 'op-weblog' ),
+		'description' => __( '', 'op-weblog' ),
+		'priority' => 190,
+	]
+);
 
 $panel   = Framework::get_panel( 'layout' );
 $section = Framework::get_section( 'site-footer' );
