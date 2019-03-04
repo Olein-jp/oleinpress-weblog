@@ -8,10 +8,26 @@
 
 use Inc2734\WP_Customizer_Framework\Framework;
 
+/*
+ * Control : Accent color
+ */
+Framework::control(
+	'color',
+	'op-accent-color',
+	[
+		'label' => __( 'Accent color', 'op-weblog' ),
+		'default' => '#96ceb4',
+		'priority' => 100,
+	]
+);
+
 if ( ! is_customize_preview() ) {
 	return;
 }
 
+/***
+ * Panel : Design
+ */
 Framework::panel(
 	'design',
 	[
@@ -20,22 +36,15 @@ Framework::panel(
 	]
 );
 
+/**
+ * Section : Basic design
+ */
 Framework::section(
 	'basic',
 	[
 		'title' => __( 'Basic design', 'op-weblog' ),
 		'description' => __( '', 'op-weblog' ),
 		'priority' => 130,
-	]
-);
-
-Framework::control(
-	'color',
-	'op-accent-color',
-	[
-		'label' => __( 'Accent color', 'op-weblog' ),
-		'default' => '#96ceb4',
-		'priority' => 100,
 	]
 );
 

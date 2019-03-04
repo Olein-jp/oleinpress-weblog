@@ -8,33 +8,6 @@
 
 use Inc2734\WP_Customizer_Framework\Framework;
 
-if ( ! is_customize_preview() ) {
-	return;
-}
-
-Framework::panel(
-	'sns',
-	[
-		'title' => __( 'SNS', 'op-weblog' ),
-		'priority' => 1040,
-	]
-);
-
-/**
- * section : Share buttons
- */
-Framework::section(
-	'share-buttons',
-	[
-		'title' => __( 'Share buttons', 'op-weblog' ),
-		'description' => sprintf(
-			__( 'If you want to count of tweet then needs to register to %1$s.', 'op-weblog' ),
-			'<a href="https://opensharecount.com/" target="_blank">OpenShareCount</a>'
-		),
-		'priority' => 130,
-	]
-);
-
 /**
  * control : Display share buttons
  */
@@ -60,11 +33,6 @@ Framework::control(
 	]
 );
 
-$panel   = Framework::get_panel( 'sns' );
-$section = Framework::get_section( 'share-buttons' );
-$control = Framework::get_control( 'op-display-share-buttons' );
-$control->join( $section )->join( $panel );
-
 /**
  * control : Button types
  */
@@ -86,22 +54,6 @@ Framework::control(
 	]
 );
 
-$panel   = Framework::get_panel( 'sns' );
-$section = Framework::get_section( 'share-buttons' );
-$control = Framework::get_control( 'op-share-buttons-type' );
-$control->join( $section )->join( $panel );
-
-/**
- * section : Like box
- */
-Framework::section(
-	'like-box',
-	[
-		'title' => __( 'Like box', 'op-weblog' ),
-		'priority' => 130,
-	]
-);
-
 /**
  * control : Facebook like box name setting
  */
@@ -118,11 +70,6 @@ Framework::control(
 	]
 );
 
-$panel   = Framework::get_panel( 'sns' );
-$section = Framework::get_section( 'like-box' );
-$control = Framework::get_control( 'op-fb-like-box-name' );
-$control->join( $section )->join( $panel );
-
 /**
  * control : Show Facebook like box setting for post
  */
@@ -138,10 +85,6 @@ Framework::control(
 		),
 	]
 );
-$panel   = Framework::get_panel( 'sns' );
-$section = Framework::get_section( 'like-box' );
-$control = Framework::get_control( 'op-fb-like-box-show-post' );
-$control->join( $section )->join( $panel );
 
 /**
  * control : Show Facebook like box setting for post
@@ -158,6 +101,63 @@ Framework::control(
 		),
 	]
 );
+
+if ( ! is_customize_preview() ) {
+	return;
+}
+
+/***
+ * Panel : SNS
+ */
+Framework::panel(
+	'sns',
+	[
+		'title' => __( 'SNS', 'op-weblog' ),
+		'priority' => 1040,
+	]
+);
+
+/**
+ * section : Share buttons
+ */
+Framework::section(
+	'share-buttons',
+	[
+		'title' => __( 'Share buttons', 'op-weblog' ),
+		'description' => sprintf(
+			__( 'If you want to count of tweet then needs to register to %1$s.', 'op-weblog' ),
+			'<a href="https://opensharecount.com/" target="_blank">OpenShareCount</a>'
+		),
+		'priority' => 130,
+	]
+);
+
+$panel   = Framework::get_panel( 'sns' );
+$section = Framework::get_section( 'share-buttons' );
+$control = Framework::get_control( 'op-display-share-buttons' );
+$control->join( $section )->join( $panel );
+
+$panel   = Framework::get_panel( 'sns' );
+$section = Framework::get_section( 'share-buttons' );
+$control = Framework::get_control( 'op-share-buttons-type' );
+$control->join( $section )->join( $panel );
+
+/**
+ * section : Like box
+ */
+Framework::section(
+	'like-box',
+	[
+		'title' => __( 'Like box', 'op-weblog' ),
+		'priority' => 130,
+	]
+);
+
+$panel   = Framework::get_panel( 'sns' );
+$section = Framework::get_section( 'like-box' );
+$control = Framework::get_control( 'op-fb-like-box-name' );
+$control->join( $section )->join( $panel );
+
 $panel   = Framework::get_panel( 'sns' );
 $section = Framework::get_section( 'like-box' );
 $control = Framework::get_control( 'op-fb-like-box-show-page' );

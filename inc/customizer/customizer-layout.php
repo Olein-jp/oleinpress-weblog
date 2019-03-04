@@ -8,6 +8,9 @@
 
 use Inc2734\WP_Customizer_Framework\Framework;
 
+/*
+ * Control : site header layout
+ */
 Framework::control(
 	'radio',
 	'op-site-header-layout',
@@ -22,6 +25,9 @@ Framework::control(
 	]
 );
 
+/*
+ * Control : global menu horizontal
+ */
 Framework::control(
 	'radio',
 	'op-global-menu-horizontal',
@@ -35,6 +41,9 @@ Framework::control(
 	]
 );
 
+/*
+ * control : archive page layout
+ */
 Framework::control(
 	'radio',
 	'op-archive-page-layout',
@@ -48,6 +57,9 @@ Framework::control(
 	]
 );
 
+/*
+ * control : site footer column
+ */
 Framework::control(
 	'radio',
 	'op-site-footer-col-number',
@@ -66,6 +78,9 @@ if ( ! is_customize_preview() ) {
 	return;
 }
 
+/***
+ * Panel: Layout
+ */
 Framework::panel(
 	'layout',
 	[
@@ -75,7 +90,7 @@ Framework::panel(
 );
 
 /**
- * Header section
+ * Section: Site header
  */
 Framework::section(
 	'site-header',
@@ -92,7 +107,7 @@ $control = Framework::get_control( 'op-site-header-layout' );
 $control->join( $section )->join( $panel );
 
 /**
- * Global menu horizontal position section
+ * Section: Global menu horizontal position
  */
 Framework::section(
 	'global-menu',
@@ -109,7 +124,7 @@ $control = Framework::get_control( 'op-global-menu-horizontal' );
 $control->join( $section )->join( $panel );
 
 /**
- * Archive page section
+ * Section: Archive page
  */
 Framework::section(
 	'archive-page',
@@ -126,7 +141,7 @@ $control = Framework::get_control( 'op-archive-page-layout' );
 $control->join( $section )->join( $panel );
 
 /**
- * Global menu horizontal position section
+ * Section: Site footer
  */
 Framework::section(
 	'site-footer',
@@ -137,32 +152,7 @@ Framework::section(
 	]
 );
 
-<<<<<<< HEAD
-Framework::control(
-	'radio',
-	'op-site-footer-col-num',
-	[
-		'label' => __( 'Number of site footer columns','op-weblog' ),
-		'default' => 'demo',
-		'choices' => array(
-			'2' => __( 'Two columns', 'op-weblog' ),
-			'3' => __( 'Three columns', 'op-weblog' ),
-			'4' => __( 'Four columns', 'op-weblog' ),
-		),
-	]
-);
-
-if ( ! is_customize_preview() ) {
-	return;
-}
-
-$panel   = Framework::get_panel( 'layout' );
-$section = Framework::get_section( 'site-footer' );
-$control = Framework::get_control( 'op-site-footer-col-num' );
-$control->join( $section )->join( $panel );
-=======
 $panel   = Framework::get_panel( 'layout' );
 $section = Framework::get_section( 'site-footer' );
 $control = Framework::get_control( 'op-site-footer-col-number' );
 $control->join( $section )->join( $panel );
->>>>>>> 77e392dab253280197e2cd403ab665cd41f94015

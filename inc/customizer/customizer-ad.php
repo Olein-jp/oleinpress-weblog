@@ -8,10 +8,30 @@
 
 use Inc2734\WP_Customizer_Framework\Framework;
 
+/**
+ * control : Verification code
+ */
+Framework::control(
+	'textarea',
+	'op-google-adsense-verification-code',
+	[
+		'label' => __( 'Google AdSense verification code', 'op-weblog' ),
+		'description' => __( 'Input inside of script tags', 'op-weblog' ),
+		'type' => 'option',
+		'priority' => 100,
+		'sanitize_callback' => function( $value ) {
+			return strip_tags( $value );
+		},
+	]
+);
+
 if ( ! is_customize_preview() ) {
 	return;
 }
 
+/***
+ * Panel : AD
+ */
 Framework::panel(
 	'ad',
 	[
@@ -29,23 +49,6 @@ Framework::section(
 		'title' => __( 'Google AdSense', 'op-weblog' ),
 		'description' => __( '', 'op-weblog' ),
 		'priority' => 130,
-	]
-);
-
-/**
- * control : Verification code
- */
-Framework::control(
-	'textarea',
-	'op-google-adsense-verification-code',
-	[
-		'label' => __( 'Google AdSense verification code', 'op-weblog' ),
-		'description' => __( 'Input inside of script tags', 'op-weblog' ),
-		'type' => 'option',
-		'priority' => 100,
-		'sanitize_callback' => function( $value ) {
-			return strip_tags( $value );
-		},
 	]
 );
 
