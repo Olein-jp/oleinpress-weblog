@@ -1951,17 +1951,17 @@ select {
       flex-wrap: wrap; } }
   .p-footer-widget-area_2 .c-footer-widget {
     width: 100%; }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 992px) {
       .p-footer-widget-area_2 .c-footer-widget {
         width: 49%; } }
   .p-footer-widget-area_3 .c-footer-widget {
     width: 100%; }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 992px) {
       .p-footer-widget-area_3 .c-footer-widget {
         width: 32%; } }
   .p-footer-widget-area_4 .c-footer-widget {
     width: 100%; }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 992px) {
       .p-footer-widget-area_4 .c-footer-widget {
         width: 23.5%; } }
 

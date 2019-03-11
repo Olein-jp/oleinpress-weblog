@@ -11,7 +11,7 @@
   &_2 {
     .c-footer-widget {
       width: 100%;
-      @include mq-up(md) {
+      @include mq-up(lg) {
         width: 49%;
       }
     }
@@ -19,7 +19,7 @@
   &_3 {
     .c-footer-widget {
       width: 100%;
-      @include mq-up(md) {
+      @include mq-up(lg) {
         width: 32%;
       }
     }
@@ -27,15 +27,9 @@
   &_4 {
     .c-footer-widget {
       width: 100%;
-      @include mq-up(md) {
+      @include mq-up(lg) {
         width: 23.5%;
       }
     }
-  }
-}
-
-.p-footer-widget {
-  @include mq-up(lg) {
-    //width: 33%;
   }
 }
