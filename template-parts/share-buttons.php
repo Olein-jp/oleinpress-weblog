@@ -6,7 +6,9 @@
  * Time: 22:20
  */
 ?>
-
+<?php
+if ( get_option( 'op-display-share-buttons' ) ) :
+?>
 <div class="wp-share-buttons wp-share-buttons--<?php echo esc_attr( get_option( 'op-share-buttons-type' ) ); ?>">
 <ul class="p-share-buttons p-share-buttons_<?php echo esc_attr( get_option( 'op-share-buttons-type' ) ); ?> wp-share-buttons__list">
 	<?php $buttons = explode( ',', get_option( 'op-display-share-buttons' ) ); ?>
@@ -27,3 +29,4 @@
 	<?php endforeach; ?>
 </ul>
 </div>
+<?php endif; ?>

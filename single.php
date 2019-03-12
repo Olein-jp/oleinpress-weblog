@@ -40,7 +40,12 @@ get_header();
 					</ul>
 				</header>
 				<?php
-					get_template_part( 'template-parts/share-buttons' );
+				if ( false !== strpos( get_option( 'op-switch-show-on-page-post' ), 'post' ) ) {
+					$op_switch_show_on_top_bottom = get_option( 'op-switch-show-on-top-bottom' );
+					if ( false !== strpos( $op_switch_show_on_top_bottom, 'top' ) ) {
+						get_template_part( 'template-parts/share-buttons' );
+					}
+				}
 				?>
 				<figure class="c-entry-thumbnail">
 					<?php
@@ -58,6 +63,13 @@ get_header();
 				if ( 'show' === get_theme_mod( 'op-fb-like-box-show-post' ) ) {
 					get_template_part( 'template-parts/fb-like-box' );
 				} ?>
+				<?php
+				if ( false !== strpos( get_option( 'op-switch-show-on-page-post' ), 'post' ) ) {
+					if ( false !== strpos( get_option( 'op-switch-show-on-top-bottom' ), 'bottom' ) ) {
+						get_template_part( 'template-parts/share-buttons' );
+					}
+				}
+				?>
 			</article>
 
 			<?php

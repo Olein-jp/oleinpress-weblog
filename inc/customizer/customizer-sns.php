@@ -55,6 +55,42 @@ Framework::control(
 );
 
 /**
+ * control : switch to show on post and page
+ */
+Framework::control(
+	'multiple-checkbox',
+	'op-switch-show-on-page-post',
+	[
+		'type'     => 'option',
+		'label'    => __( 'Show on type', 'op-weblog' ),
+		'priority' => 120,
+		'default'  => 'post',
+		'choices'  => [
+			'post' => __( 'Post', 'op-weblog' ),
+			'page' => __( 'Page', 'op-weblog' ),
+		],
+	]
+);
+
+/**
+ * control : switch to show on top and bottom
+ */
+Framework::control(
+	'multiple-checkbox',
+	'op-switch-show-on-top-bottom',
+	[
+		'type'       => 'option',
+		'label'      => __( 'Show on place', 'op-weblog' ),
+		'priority'   => 130,
+		'default'    => 'top',
+		'choices'    => [
+			'top'    => __( 'Top', 'op-weblog' ),
+			'bottom' => __( 'Bottom', 'op-weblog' ),
+		],
+	]
+);
+
+/**
  * control : Facebook like box name setting
  */
 Framework::control(
@@ -140,6 +176,16 @@ $control->join( $section )->join( $panel );
 $panel   = Framework::get_panel( 'sns' );
 $section = Framework::get_section( 'share-buttons' );
 $control = Framework::get_control( 'op-share-buttons-type' );
+$control->join( $section )->join( $panel );
+
+$panel   = Framework::get_panel( 'sns' );
+$section = Framework::get_section( 'share-buttons' );
+$control = Framework::get_control( 'op-switch-show-on-page-post' );
+$control->join( $section )->join( $panel );
+
+$panel   = Framework::get_panel( 'sns' );
+$section = Framework::get_section( 'share-buttons' );
+$control = Framework::get_control( 'op-switch-show-on-top-bottom' );
 $control->join( $section )->join( $panel );
 
 /**
