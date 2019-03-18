@@ -176,6 +176,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
+ * Load WooCommerce compatibility file.
+ */
+if ( class_exists( 'WooCommerce' ) ) {
+	require get_template_directory() . '/inc/woocommerce.php';
+}
+
+/**
  * Load composer autoload.php
  */
 require get_template_directory() . '/vendor/autoload.php';

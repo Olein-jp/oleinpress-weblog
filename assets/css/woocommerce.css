@@ -1,0 +1,86 @@
+/*
+Theme Name: OleinPress - Weblog
+WooCommerce styles override
+*/
+/**
+  setting
+ */
+/**
+  colors
+ */
+/**
+  layouts
+ */
+.woocommerce {
+  /**
+  Pagination
+   */
+  /**
+  product single page
+   */
+  /**
+  added to cart
+   */
+  /**
+  go to purchase
+   */
+  /**
+  go order
+   */
+  /**
+  form
+  */ }
+  .woocommerce span.onsale {
+    background-color: #96CEB4; }
+  .woocommerce ul.products li.product a img {
+    margin: 0; }
+  .woocommerce ul.products li.product .woocommerce-loop-product__title {
+    color: #444444; }
+  .woocommerce ul.products li.product .price {
+    color: #96CEB4; }
+    .woocommerce ul.products li.product .price del {
+      margin-right: 5px; }
+  .woocommerce ul.products li.product .add_to_cart_button,
+  .woocommerce ul.products li.product .product_type_grouped {
+    width: 100%;
+    text-align: center;
+    background: #96CEB4;
+    color: white; }
+  .woocommerce nav.woocommerce-pagination ul li a {
+    color: #adb5bd; }
+  .woocommerce #content div.product div.images {
+    margin-bottom: 1em; }
+  .woocommerce .woocommerce-product-details__short-description {
+    margin-bottom: 1em; }
+  .woocommerce .quantity input {
+    border: 1px solid #dee2e6;
+    height: 35px; }
+  .woocommerce a.added_to_cart {
+    display: inline-block;
+    width: 100%;
+    margin-top: 5px;
+    background-color: #96CEB4;
+    padding: 5px;
+    text-align: center;
+    color: white; }
+  .woocommerce a.button.alt {
+    background-color: #96CEB4; }
+  .woocommerce button.button.alt {
+    background-color: #96CEB4; }
+    .woocommerce button.button.alt:hover {
+      background-color: #96CEB4;
+      opacity: .75; }
+  .woocommerce form .form-row input.input-text,
+  .woocommerce form .form-row textarea {
+    border: 1px solid #dee2e6;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px; }
+  .woocommerce form .select2-container--default .select2-selection--single {
+    border-color: #dee2e6; }
+
+.woocommerce-info {
+  border-top-color: #adb5bd; }
+  .woocommerce-info::before {
+    color: #adb5bd; }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9hc3NldHMvc2Fzcy93b29jb21tZXJjZS5zY3NzIiwiLi4vLi4vc3JjL2Fzc2V0cy9zYXNzL2NvcmUvX3ZhcmlhYmxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7RUFHRTtBQ0hGOztHQUVHO0FBR0g7O0dBRUc7QUF5Q0g7O0dBRUc7QUQ1Q0g7RUE2QkU7O0tBRUc7RUFXSDs7S0FFRztFQWlCSDs7S0FFRztFQVdIOztLQUVHO0VBS0g7O0tBRUc7RUFTSDs7SUFFRSxFQWlCSDtFQS9HRDtJQUVJLDBCQ3dCMEIsRUR2QjNCO0VBSEg7SUFRVSxVQUFTLEVBQ1Y7RUFUVDtJQVlRLGVDZ0J5QixFRGYxQjtFQWJQO0lBZVEsZUNXc0IsRURQdkI7SUFuQlA7TUFpQlUsa0JBQWlCLEVBQ2xCO0VBbEJUOztJQXNCUSxZQUFXO0lBQ1gsbUJBQWtCO0lBQ2xCLG9CQ0VzQjtJRER0QixhQUFZLEVBQ2I7RUExQlA7SUFvQ1UsZUM3QlMsRUQ4QlY7RUFyQ1Q7SUFnRFEsbUJBQWtCLEVBQ25CO0VBakRQO0lBcURJLG1CQUFrQixFQUNuQjtFQXRESDtJQXlETSwwQkNwRGE7SURxRGIsYUFBWSxFQUNiO0VBM0RMO0lBaUVJLHNCQUFxQjtJQUNyQixZQUFXO0lBQ1gsZ0JBQWU7SUFDZiwwQkMxQzBCO0lEMkMxQixhQUFZO0lBQ1osbUJBQWtCO0lBQ2xCLGFBQVksRUFDYjtFQXhFSDtJQThFSSwwQkNwRDBCLEVEcUQzQjtFQS9FSDtJQXFGSSwwQkMzRDBCLEVEZ0UzQjtJQTFGSDtNQXVGTSwwQkM3RHdCO01EOER4QixhQUFZLEVBQ2I7RUF6Rkw7O0lBbUdRLDBCQzlGVztJRCtGWCxnQkFBZTtJQUNmLGFBQVk7SUFDWixtQkFBa0IsRUFDbkI7RUF2R1A7SUEyR00sc0JDdEdhLEVEdUdkOztBQUtMO0VBQ0UsMEJDM0dpQixFRCtHbEI7RUFMRDtJQUdJLGVDN0dlLEVEOEdoQiIsImZpbGUiOiJ3b29jb21tZXJjZS5jc3MifQ== */
